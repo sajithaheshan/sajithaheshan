@@ -143,3 +143,17 @@
 </div>
 
 <br>
+
+<br><br>
+
+<div align="center">
+  <img src="./terminal.svg?v=1" alt="System Terminal Stats" width="100%" />
+</div>
+
+<br><br>
+
+<!-- Visitor Counter (Placed cleanly at the absolute bottom) -->
+<div align="center">
+  <p style="font-family: monospace; font-size: 12px; color: #64748B;">SYSTEM SCANS (VISITORS)</p>
+  <img src="https://komarev.com/ghpvc/?username=sajithaheshan&label=VIEWS&color=00FFCC&style=for-the-badge" alt="Profile Views" />
+</div>
