@@ -55,26 +55,10 @@
 
 
 <br>
-<br>
 
-<br><br>
-
-<!-- THE GOD-TIER ARSENAL SVG -->
-<div align="center">
-  <img src="./core-processor.svg?v=1" alt="Tech Arsenal Core" width="100%" />
-</div>
-
-<br>
-
-<!-- LIVE SYSTEM METRICS (Dark Theme) -->
-<h3 align="center" style="font-family: -apple-system, sans-serif; color: #94A3B8; text-transform: uppercase; letter-spacing: 2px;">
-  Live System Metrics
-</h3>
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=sajithaheshan&show_icons=true&bg_color=050505&hide_border=true&title_color=00E5FF&icon_color=FF007F&text_color=94A3B8" alt="GitHub Stats" width="400"/>
-  
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=sajithaheshan&layout=compact&bg_color=050505&hide_border=true&title_color=00E5FF&text_color=94A3B8" alt="Top Languages" width="400"/>
+  <img src="./arsenal.svg?v=1" alt="Tech Arsenal Matrix" width="100%" />
 </div>
 
 <br><br>
