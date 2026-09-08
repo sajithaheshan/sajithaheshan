@@ -61,8 +61,23 @@
   <!-- Rotating Outer Ring -->
   <circle cx="150" cy="200" r="88" fill="none" stroke="#00FFCC" stroke-width="3" stroke-dasharray="15 15" style="transform-origin: 150px 200px; animation: dpSpin 15s linear infinite;"/>
   <!-- Inner Background & Vector Logo (Instead of Image DP) -->
-  <circle cx="150" cy="200" r="80" fill="#0F172A" stroke="#3B82F6" stroke-width="2"/>
-  <text x="150" y="218" text-anchor="middle" class="logo-text">S.H</text>
+<defs>
+  <clipPath id="profileClip">
+    <circle cx="150" cy="200" r="78"/>
+  </clipPath>
+</defs>
+
+<circle cx="150" cy="200" r="82" fill="#0F172A" stroke="#3B82F6" stroke-width="3"/>
+
+<image
+  href="https://raw.githubusercontent.com/sajithaheshan/sajithaheshan/main/profile.jpg"
+  x="72"
+  y="122"
+  width="156"
+  height="156"
+  preserveAspectRatio="xMidYMid slice"
+  clip-path="url(#profileClip)"
+/>
 
   <!-- ========================================== -->
   <!-- MIDDLE: NAME, RICH TEXT & QUOTE            -->
