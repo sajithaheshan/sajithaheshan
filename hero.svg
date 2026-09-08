@@ -1,108 +1,107 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1200 400" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 450" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
   <defs>
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&amp;family=Inter:wght@400;500;800&amp;display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;500;800;900&amp;family=JetBrains+Mono:wght@400;700&amp;display=swap');
       
-      @keyframes fadeUp {
-        0% { opacity: 0; transform: translateY(20px); }
+      /* Animations */
+      @keyframes fadeInUp {
+        0% { opacity: 0; transform: translateY(30px); }
         100% { opacity: 1; transform: translateY(0); }
       }
       
-      @keyframes drawHighlight {
-        0% { stroke-dashoffset: 400; opacity: 0; }
-        20% { opacity: 1; }
-        100% { stroke-dashoffset: 0; opacity: 1; }
+      @keyframes expandLine {
+        0% { width: 0; opacity: 0; }
+        100% { width: 200px; opacity: 1; }
       }
 
-      .bg-grad { animation: none; }
-      
-      .eyebrow { 
-        font-family: 'Inter', sans-serif; font-weight: 800; font-size: 18px; 
-        fill: #D97757; letter-spacing: 6px;
-        animation: fadeUp 1s ease-out forwards;
+      @keyframes pulseGlow {
+        0%, 100% { opacity: 0.5; transform: scale(1); }
+        50% { opacity: 0.8; transform: scale(1.05); }
       }
-      
+
+      @keyframes floatLeftRight {
+        0%, 100% { transform: translateX(0); }
+        50% { transform: translateX(40px); }
+      }
+
+      /* Typography */
+      .badge {
+        font-family: 'JetBrains Mono', monospace; font-size: 14px; font-weight: 700;
+        fill: #00FFCC; letter-spacing: 2px;
+        animation: fadeInUp 1s ease-out forwards;
+      }
+
       .title { 
-        font-family: 'Playfair Display', serif; font-weight: 700; font-size: 68px; 
-        fill: #2B2B2B;
-        animation: fadeUp 1s ease-out 0.3s forwards; opacity: 0;
+        font-family: 'Inter', sans-serif; font-weight: 900; font-size: 85px; 
+        fill: #FFFFFF; letter-spacing: -3px;
+        animation: fadeInUp 1s ease-out 0.2s forwards; opacity: 0;
       }
       
       .subtitle {
-        font-family: 'Inter', sans-serif; font-weight: 500; font-size: 22px;
-        fill: #767676;
-        animation: fadeUp 1s ease-out 0.6s forwards; opacity: 0;
+        font-family: 'Inter', sans-serif; font-weight: 300; font-size: 24px;
+        fill: #A1A1AA; letter-spacing: 1px;
+        animation: fadeInUp 1s ease-out 0.5s forwards; opacity: 0;
       }
 
-      .highlight {
-        stroke: #FFD54F; stroke-width: 22; stroke-linecap: round; fill: none;
-        stroke-dasharray: 400; stroke-dashoffset: 400;
-        animation: drawHighlight 1.3s cubic-bezier(0.7, 0, 0.3, 1) 1.1s forwards;
+      .glow-line {
+        fill: url(#cyanGradient);
+        animation: expandLine 1.5s cubic-bezier(0.7, 0, 0.3, 1) 0.8s forwards;
         opacity: 0;
       }
 
-      .icon-float-1 { animation: floatA 6s ease-in-out infinite; transform-origin: center; }
-      .icon-float-2 { animation: floatB 7s ease-in-out infinite; transform-origin: center; }
-      .icon-float-3 { animation: floatA 8s ease-in-out infinite; transform-origin: center; }
-      .icon-float-4 { animation: floatB 5.5s ease-in-out infinite; transform-origin: center; }
-      .icon-float-5 { animation: floatA 9s ease-in-out infinite; transform-origin: center; }
-
-      @keyframes floatA {
-        0%, 100% { transform: translateY(0px) rotate(0deg); }
-        50% { transform: translateY(-18px) rotate(6deg); }
-      }
-      @keyframes floatB {
-        0%, 100% { transform: translateY(0px) rotate(0deg); }
-        50% { transform: translateY(16px) rotate(-5deg); }
-      }
-
-      .dot { fill: #D97757; opacity: 0.35; }
-      .blob { fill: #F4EBE1; }
+      /* Orbs Animations */
+      .orb-purple { animation: pulseGlow 6s infinite, floatLeftRight 10s infinite; transform-origin: center; }
+      .orb-cyan { animation: pulseGlow 8s infinite, floatLeftRight 12s infinite reverse; transform-origin: center; }
     </style>
 
-    <linearGradient id="bgFade" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#FEFCF9"/>
-      <stop offset="100%" stop-color="#FBF3EA"/>
+    <!-- Glowing Orb Gradients (Safe for all devices) -->
+    <radialGradient id="glowPurple" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#7000FF" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#7000FF" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="glowCyan" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#00FFCC" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#00FFCC" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="cyanGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00FFCC"/>
+      <stop offset="100%" stop-color="#7000FF"/>
     </linearGradient>
+
+    <!-- Background Grid Pattern -->
+    <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+      <path d="M 60 0 L 0 0 0 60" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-opacity="0.05"/>
+    </pattern>
   </defs>
 
-  <rect width="1200" height="400" fill="url(#bgFade)" rx="20" ry="20"/>
+  <!-- Pitch Black Background -->
+  <rect width="1200" height="450" fill="#050505" rx="16" ry="16"/>
 
-  <circle cx="150" cy="80" r="140" class="blob" opacity="0.6"/>
-  <circle cx="1080" cy="330" r="180" class="blob" opacity="0.5"/>
-  <circle cx="1000" cy="60" r="6" class="dot"/>
-  <circle cx="1040" cy="100" r="4" class="dot"/>
-  <circle cx="960" cy="110" r="3" class="dot"/>
+  <!-- Background Animated Glowing Orbs -->
+  <circle cx="200" cy="225" r="450" fill="url(#glowPurple)" class="orb-purple"/>
+  <circle cx="1000" cy="225" r="500" fill="url(#glowCyan)" class="orb-cyan"/>
 
-  <g class="icon-float-1" transform="translate(980, 60)">
-    <image href="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" x="0" y="0" width="46" height="46"/>
-  </g>
+  <!-- Overlay Tech Grid -->
+  <rect width="1200" height="450" fill="url(#grid)" rx="16" ry="16"/>
 
-  <g class="icon-float-2" transform="translate(1090, 150)">
-    <image href="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" x="0" y="0" width="50" height="50"/>
-  </g>
+  <!-- Center Content -->
+  <g transform="translate(600, 160)" text-anchor="middle">
+    
+    <!-- Top Monospace Badge -->
+    <rect x="-115" y="-22" width="230" height="30" fill="#00FFCC" fill-opacity="0.1" rx="15" stroke="#00FFCC" stroke-width="1" style="animation: fadeInUp 1s ease-out forwards;"/>
+    <text x="0" y="-2" class="badge">SAJITHA.HESHAN</text>
 
-  <g class="icon-float-3" transform="translate(1000, 250)">
-    <image href="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" x="0" y="0" width="44" height="44"/>
-  </g>
+    <!-- Huge Impactful Title -->
+    <text x="0" y="80" class="title">THE ARCHITECT</text>
 
-  <g class="icon-float-4" transform="translate(60, 280)">
-    <image href="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" x="0" y="0" width="42" height="42"/>
-  </g>
+    <!-- Glowing Animated Divider Line -->
+    <rect x="-100" y="125" height="4" rx="2" class="glow-line" />
 
-  <g class="icon-float-5" transform="translate(110, 340)">
-    <image href="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" x="0" y="0" width="40" height="40"/>
-  </g>
+    <!-- Subtitle Description -->
+    <text x="0" y="190" class="subtitle">Designing <tspan fill="#FFFFFF" font-weight="500">AI-Driven</tspan> logic.</text>
+    <text x="0" y="230" class="subtitle">Building aesthetic digital ecosystems.</text>
 
-  <g transform="translate(90, 130)">
-    <text x="0" y="0" class="eyebrow">HELLO, I'M SAJITHA HESHAN</text>
-
-    <path d="M 340 68 Q 430 65 510 70" class="highlight" />
-
-    <text x="0" y="75" class="title">I design and engineer</text>
-    <text x="0" y="145" class="title">digital experiences.</text>
-
-    <text x="0" y="195" class="subtitle">Tech Creator &amp; UI/UX Architect — turning AI-driven</text>
-    <text x="0" y="225" class="subtitle">concepts into aesthetic, scalable realities.</text>
   </g>
 </svg>
