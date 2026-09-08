@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 450" width="100%" height="100%">
+  <defs>
+    <style>
+      .name { font-family: system-ui, -apple-system, sans-serif; font-size: 55px; font-weight: 900; fill: #FFFFFF; letter-spacing: -1px; }
+      .role { font-family: system-ui, -apple-system, sans-serif; font-size: 18px; font-weight: 700; fill: #00FFCC; letter-spacing: 2px; }
+      .quote { font-family: system-ui, -apple-system, sans-serif; font-size: 17px; font-style: italic; fill: #D1D5DB; font-weight: 400; }
+      
+      .card-title { font-family: system-ui, -apple-system, sans-serif; font-size: 16px; font-weight: 700; fill: #FFFFFF; }
+      .card-sub { font-family: system-ui, -apple-system, sans-serif; font-size: 13px; font-weight: 400; fill: #94A3B8; }
+      
+      .logo-text { font-family: system-ui, -apple-system, sans-serif; font-size: 50px; font-weight: 900; fill: #FFFFFF; }
+      
+      @keyframes dpSpin { 100% { transform: rotate(360deg); } }
+      @keyframes cardFloat1 { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
+      @keyframes cardFloat2 { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
+      @keyframes waveAnim { 
+        0% { d: path("M0,0 L1200,0 L1200,330 C800,430 400,230 0,330 Z"); } 
+        50% { d: path("M0,0 L1200,0 L1200,370 C800,270 400,470 0,370 Z"); } 
+        100% { d: path("M0,0 L1200,0 L1200,330 C800,430 400,230 0,330 Z"); } 
+      }
+    </style>
+
+    <!-- The Animated Waving Bottom Path -->
+    <clipPath id="waveClip">
+      <path d="M0,0 L1200,0 L1200,330 C800,430 400,230 0,330 Z" style="animation: waveAnim 8s infinite ease-in-out;" />
+    </clipPath>
+
+    <!-- Glowing Cyber Gradients for Background (No external images) -->
+    <radialGradient id="glow1" cx="20%" cy="30%" r="60%">
+      <stop offset="0%" stop-color="#0F172A" />
+      <stop offset="100%" stop-color="#020617" />
+    </radialGradient>
+    <radialGradient id="glow2" cx="80%" cy="80%" r="50%">
+      <stop offset="0%" stop-color="#00FFCC" stop-opacity="0.15" />
+      <stop offset="100%" stop-color="#00FFCC" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="glow3" cx="50%" cy="10%" r="50%">
+      <stop offset="0%" stop-color="#3B82F6" stop-opacity="0.2" />
+      <stop offset="100%" stop-color="#3B82F6" stop-opacity="0" />
+    </radialGradient>
+    
+    <!-- Tech Grid Pattern -->
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#FFFFFF" stroke-opacity="0.03" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <!-- ========================================== -->
+  <!-- BACKGROUND (100% SAFE GRADIENTS & GRID)    -->
+  <!-- ========================================== -->
+  <g clip-path="url(#waveClip)">
+    <rect width="1200" height="500" fill="url(#glow1)" />
+    <rect width="1200" height="500" fill="url(#glow2)" />
+    <rect width="1200" height="500" fill="url(#glow3)" />
+    <rect width="1200" height="500" fill="url(#grid)" />
+  </g>
+
+  <!-- ========================================== -->
+  <!-- LEFT: S.H. LOGO & ANIMATED RING            -->
+  <!-- ========================================== -->
+  <!-- Rotating Outer Ring -->
+  <circle cx="150" cy="200" r="88" fill="none" stroke="#00FFCC" stroke-width="3" stroke-dasharray="15 15" style="transform-origin: 150px 200px; animation: dpSpin 15s linear infinite;"/>
+  <!-- Inner Background & Vector Logo (Instead of Image DP) -->
+  <circle cx="150" cy="200" r="80" fill="#0F172A" stroke="#3B82F6" stroke-width="2"/>
+  <text x="150" y="218" text-anchor="middle" class="logo-text">S.H</text>
+
+  <!-- ========================================== -->
+  <!-- MIDDLE: NAME, RICH TEXT & QUOTE            -->
+  <!-- ========================================== -->
+  <g transform="translate(280, 160)">
+    <!-- Name -->
+    <text x="0" y="0" class="name">Sajitha Heshan</text>
+    
+    <!-- Rich Text / Roles -->
+    <text x="0" y="35" class="role">AI-ASSISTED DEVELOPER <tspan fill="#FFFFFF" font-weight="300">|</tspan> UI/UX VISIONARY</text>
+    
+    <!-- Vertical Highlight Line -->
+    <rect x="0" y="65" width="4" height="45" rx="2" fill="#00FFCC" />
+    
+    <!-- Quote -->
+    <text x="18" y="80" class="quote">"I don't just talk about technology on YouTube;</text>
+    <text x="18" y="105" class="quote">I use AI and design to actually build it." 🚀</text>
+  </g>
+
+  <!-- ========================================== -->
+  <!-- RIGHT: UI CARDS (YOUTUBE & LINKEDIN)       -->
+  <!-- ========================================== -->
+  <g transform="translate(820, 115)">
+    
+    <!-- YouTube Card -->
+    <g style="animation: cardFloat1 5s infinite ease-in-out;">
+      <rect x="0" y="0" width="320" height="75" rx="12" fill="#1E293B" stroke="#334155" stroke-width="1.5" />
+      
+      <!-- YouTube Icon (Vector) -->
+      <g transform="translate(20, 20) scale(1.5)">
+        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" fill="#EF4444"/>
+      </g>
+      
+      <text x="75" y="32" class="card-title">Subscribe to Tech Channel</text>
+      <text x="75" y="55" class="card-sub">Watch my latest tutorials</text>
+    </g>
+
+    <!-- LinkedIn Card -->
+    <g transform="translate(0, 95)" style="animation: cardFloat2 6s infinite ease-in-out reverse;">
+      <rect x="0" y="0" width="320" height="75" rx="12" fill="#1E293B" stroke="#334155" stroke-width="1.5" />
+      
+      <!-- LinkedIn Icon (Vector) -->
+      <g transform="translate(20, 18) scale(1.6)">
+        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.844-3.037-1.846 0-2.128 1.442-2.128 2.939v5.667H9.366V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zM3.56 20.452h3.555V9H3.56v11.452z" fill="#0A66C2"/>
+      </g>
+      
+      <text x="75" y="32" class="card-title">Connect on LinkedIn</text>
+      <text x="75" y="55" class="card-sub">Let's build the network</text>
+    </g>
+
+  </g>
+</svg>
