@@ -1,0 +1,137 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 450" width="100%" height="100%">
+  <defs>
+    <style>
+      .font-main { font-family: system-ui, -apple-system, sans-serif; }
+      
+      /* Typography Styles */
+      .section-tag { font-size: 13px; font-weight: 800; fill: #00FFCC; letter-spacing: 3px; text-transform: uppercase; font-family: monospace; }
+      .title-huge { font-size: 38px; font-weight: 900; fill: #FFFFFF; letter-spacing: -1px; }
+      .desc-text { font-size: 16px; font-weight: 400; fill: #94A3B8; line-height: 1.6; }
+      .highlight { font-weight: 700; fill: #FFFFFF; }
+      
+      .task-title { font-size: 15px; font-weight: 700; fill: #E2E8F0; }
+      .task-status { font-size: 12px; font-weight: 700; font-family: monospace; letter-spacing: 1px; }
+      
+      /* Pure SVG Animations */
+      @keyframes scanline { 0% { transform: translateY(-100px); opacity: 0; } 10% { opacity: 0.5; } 90% { opacity: 0.5; } 100% { transform: translateY(500px); opacity: 0; } }
+      @keyframes pulseGlow { 0%, 100% { opacity: 0.3; transform: scale(1); } 50% { opacity: 0.8; transform: scale(1.1); } }
+      @keyframes loadBar1 { 0% { width: 0; } 100% { width: 100%; } }
+      @keyframes loadBar2 { 0% { width: 0; } 100% { width: 65%; } }
+      @keyframes loadBar3 { 0% { width: 0; } 100% { width: 40%; } }
+      @keyframes loadBar4 { 0% { width: 0; } 100% { width: 5%; } }
+    </style>
+
+    <!-- Deep Ambient Glows -->
+    <radialGradient id="glowCyan" cx="30%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#00FFCC" stop-opacity="0.1" />
+      <stop offset="100%" stop-color="#00FFCC" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="glowPurple" cx="80%" cy="80%" r="50%">
+      <stop offset="0%" stop-color="#8B5CF6" stop-opacity="0.1" />
+      <stop offset="100%" stop-color="#8B5CF6" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Cyber Tech Grid Pattern -->
+    <pattern id="techGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#334155" stroke-opacity="0.3" stroke-width="1"/>
+      <circle cx="40" cy="40" r="1.5" fill="#00FFCC" opacity="0.3"/>
+    </pattern>
+
+    <!-- Bar Clipping Masks for Animation -->
+    <clipPath id="clip1"><rect height="6" rx="3" style="animation: loadBar1 2s ease-out forwards;"/></clipPath>
+    <clipPath id="clip2"><rect height="6" rx="3" style="animation: loadBar2 2.5s ease-out forwards;"/></clipPath>
+    <clipPath id="clip3"><rect height="6" rx="3" style="animation: loadBar3 3s ease-out forwards;"/></clipPath>
+    <clipPath id="clip4"><rect height="6" rx="3" style="animation: loadBar4 3.5s ease-out forwards;"/></clipPath>
+  </defs>
+
+  <!-- ========================================== -->
+  <!-- BACKGROUND & GRID                          -->
+  <!-- ========================================== -->
+  <rect width="1200" height="450" fill="#09090B" rx="20"/>
+  <rect width="1200" height="450" fill="url(#techGrid)" rx="20"/>
+  <rect width="1200" height="450" fill="url(#glowCyan)" rx="20"/>
+  <rect width="1200" height="450" fill="url(#glowPurple)" rx="20"/>
+  
+  <!-- Animated Scanline Effect -->
+  <rect width="1200" height="150" fill="url(#glowCyan)" opacity="0.2" style="animation: scanline 8s linear infinite;"/>
+
+  <g class="font-main">
+    
+    <!-- ========================================== -->
+    <!-- LEFT SIDE: THE VISION (RICH TYPOGRAPHY)    -->
+    <!-- ========================================== -->
+    <g transform="translate(60, 60)">
+      
+      <!-- Section Tag -->
+      <rect x="0" y="0" width="130" height="26" rx="13" fill="#00FFCC" fill-opacity="0.1" stroke="#00FFCC" stroke-width="1"/>
+      <circle cx="15" cy="13" r="4" fill="#00FFCC" style="animation: pulseGlow 2s infinite;"/>
+      <text x="30" y="17" class="section-tag">MASTERPLAN</text>
+
+      <!-- Huge Title -->
+      <text x="0" y="80" class="title-huge">The Ultimate Vision.</text>
+      
+      <!-- Rich Text Paragraph -->
+      <g transform="translate(0, 115)">
+        <text x="0" y="0" class="desc-text">I am actively transitioning from an <tspan class="highlight">"AI-Assisted Developer"</tspan> to an</text>
+        <text x="0" y="30" class="desc-text"><tspan class="highlight" fill="#00FFCC">"AI-Empowered Full-Stack Architect."</tspan></text>
+        
+        <text x="0" y="80" class="desc-text">Right now, AI generates the boilerplate, but I design the logic. My immediate</text>
+        <text x="0" y="110" class="desc-text">goal is to generate revenue through freelance design and AI-assisted</text>
+        <text x="0" y="140" class="desc-text">projects to fully fund a deep-dive mastery into core Software Engineering.</text>
+        
+        <text x="0" y="190" class="desc-text">I aim to not just use AI, but to <tspan class="highlight">understand &amp; rebuild the systems</tspan> it creates.</text>
+      </g>
+
+      <!-- Decorative Cyber Box -->
+      <path d="M 0 330 L 15 345 L 300 345 L 315 330 Z" fill="#1E293B" opacity="0.3" stroke="#334155" stroke-width="1"/>
+      <text x="157" y="342" text-anchor="middle" class="section-tag" fill="#64748B" font-size="10px">SYSTEM.EVOLUTION.ACTIVE</text>
+    </g>
+
+    <!-- ========================================== -->
+    <!-- RIGHT SIDE: MISSION CONTROL (ANIMATED BARS)-->
+    <!-- ========================================== -->
+    <g transform="translate(620, 50)">
+      
+      <!-- Glassmorphism Container -->
+      <rect width="520" height="340" rx="16" fill="#111827" stroke="#1E293B" stroke-width="2" style="backdrop-filter: blur(10px);"/>
+      
+      <text x="30" y="45" class="title-huge" font-size="24px">Mission Control</text>
+      <path d="M 30 65 L 490 65" stroke="#334155" stroke-width="1" stroke-dasharray="4 4"/>
+
+      <!-- TASK 1: Complete -->
+      <g transform="translate(30, 90)">
+        <text x="0" y="15" class="task-title" fill="#94A3B8" text-decoration="line-through">Master UI/UX Prototyping &amp; Design</text>
+        <text x="460" y="15" text-anchor="end" class="task-status" fill="#10B981">100%</text>
+        <rect x="0" y="25" width="460" height="6" rx="3" fill="#1E293B"/>
+        <rect x="0" y="25" width="460" height="6" rx="3" fill="#10B981" clip-path="url(#clip1)"/>
+      </g>
+
+      <!-- TASK 2: In Progress -->
+      <g transform="translate(30, 150)">
+        <text x="0" y="15" class="task-title">Establish Freelance AI-Generated Income</text>
+        <text x="460" y="15" text-anchor="end" class="task-status" fill="#EAB308">ACTIVE</text>
+        <rect x="0" y="25" width="460" height="6" rx="3" fill="#1E293B"/>
+        <rect x="0" y="25" width="460" height="6" rx="3" fill="#EAB308" clip-path="url(#clip2)"/>
+        <!-- Active Pulse Dot -->
+        <circle cx="300" cy="28" r="4" fill="#FFFFFF" style="animation: pulseGlow 1.5s infinite;"/>
+      </g>
+
+      <!-- TASK 3: In Progress -->
+      <g transform="translate(30, 210)">
+        <text x="0" y="15" class="task-title">Reverse Engineer AI Code to Master Core JS</text>
+        <text x="460" y="15" text-anchor="end" class="task-status" fill="#00FFCC">40%</text>
+        <rect x="0" y="25" width="460" height="6" rx="3" fill="#1E293B"/>
+        <rect x="0" y="25" width="460" height="6" rx="3" fill="#00FFCC" clip-path="url(#clip3)"/>
+      </g>
+
+      <!-- TASK 4: Upcoming -->
+      <g transform="translate(30, 270)">
+        <text x="0" y="15" class="task-title" fill="#64748B">Deep Dive into Backend &amp; Databases</text>
+        <text x="460" y="15" text-anchor="end" class="task-status" fill="#64748B">PENDING</text>
+        <rect x="0" y="25" width="460" height="6" rx="3" fill="#1E293B"/>
+        <rect x="0" y="25" width="460" height="6" rx="3" fill="#64748B" clip-path="url(#clip4)"/>
+      </g>
+
+    </g>
+  </g>
+</svg>
