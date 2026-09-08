@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" width="100%" height="100%">
+  <defs>
+    <style>
+      .font-main { font-family: -apple-system, 'Segoe UI', 'Helvetica Neue', sans-serif; }
+      .card { fill: #FFFFFF; filter: drop-shadow(0 15px 25px rgba(0,0,0,0.05)); rx: 24px; stroke: #E2E8F0; stroke-width: 1px; }
+      
+      .card-title { font-size: 14px; font-weight: 800; fill: #64748B; letter-spacing: 1.5px; }
+      .step-title { font-size: 20px; font-weight: 700; fill: #0F172A; }
+      .step-desc { font-size: 16px; font-weight: 400; fill: #64748B; line-height: 1.5; }
+      
+      @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+      @keyframes pulse { 0%, 100% { opacity: 0.4; transform: scale(1); } 50% { opacity: 1; transform: scale(1.1); } }
+      @keyframes dashAnim { 0% { stroke-dashoffset: 100; } 100% { stroke-dashoffset: 0; } }
+      @keyframes drawGraph { 0% { stroke-dashoffset: 500; } 100% { stroke-dashoffset: 0; } }
+    </style>
+  </defs>
+
+  <!-- Same Light Gray Background to blend perfectly with Section 1 -->
+  <rect width="1200" height="600" fill="#F8FAFC" />
+
+  <g class="font-main">
+    
+    <!-- ========================================== -->
+    <!-- CARD 1: THE WORK PIPELINE (Left Side)      -->
+    <!-- ========================================== -->
+    <g transform="translate(40, 20)">
+      <rect width="700" height="540" class="card"/>
+      <text x="40" y="50" class="card-title">THE AI-ASSISTED PIPELINE</text>
+      
+      <!-- Vertical Connection Line -->
+      <path d="M 60 100 L 60 480" fill="none" stroke="#E2E8F0" stroke-width="3" stroke-dasharray="8 8" style="animation: dashAnim 3s linear infinite;"/>
+
+      <!-- Step 1: Ideation -->
+      <g transform="translate(40, 90)">
+        <circle cx="20" cy="20" r="16" fill="#F8FAFC" stroke="#3B82F6" stroke-width="4"/>
+        <circle cx="20" cy="20" r="6" fill="#3B82F6" style="animation: pulse 2s infinite;"/>
+        <text x="60" y="26" class="step-title">1. Conceptual Architecture</text>
+        <text x="60" y="55" class="step-desc">Brainstorming raw ideas and translating them into high-level</text>
+        <text x="60" y="80" class="step-desc">system logic before writing a single line of code.</text>
+      </g>
+
+      <!-- Step 2: UI/UX Design -->
+      <g transform="translate(40, 200)">
+        <circle cx="20" cy="20" r="16" fill="#F8FAFC" stroke="#F24E1E" stroke-width="4"/>
+        <text x="60" y="26" class="step-title">2. Pixel-Perfect Prototyping</text>
+        <text x="60" y="55" class="step-desc">Using Figma &amp; Canva to craft beautiful, modern, and accessible</text>
+        <text x="60" y="80" class="step-desc">user interfaces that prioritize the human experience.</text>
+      </g>
+
+      <!-- Step 3: AI Generation -->
+      <g transform="translate(40, 310)">
+        <circle cx="20" cy="20" r="16" fill="#F8FAFC" stroke="#10B981" stroke-width="4"/>
+        <text x="60" y="26" class="step-title">3. Prompt-Driven Execution</text>
+        <text x="60" y="55" class="step-desc">Leveraging Claude 3.5 &amp; ChatGPT to generate complex boilerplate</text>
+        <text x="60" y="80" class="step-desc">and core structures based on strictly defined system prompts.</text>
+      </g>
+
+      <!-- Step 4: Refinement -->
+      <g transform="translate(40, 420)">
+        <circle cx="20" cy="20" r="16" fill="#F8FAFC" stroke="#8B5CF6" stroke-width="4"/>
+        <circle cx="20" cy="20" r="6" fill="#8B5CF6"/>
+        <text x="60" y="26" class="step-title">4. Manual Reverse Engineering</text>
+        <text x="60" y="55" class="step-desc">Testing, debugging, and rewriting the AI output manually to master</text>
+        <text x="60" y="80" class="step-desc">underlying fundamentals and ensure production-grade security.</text>
+      </g>
+    </g>
+
+    <!-- ========================================== -->
+    <!-- CARD 2: TECH BROADCASTING (Right Top)      -->
+    <!-- ========================================== -->
+    <g transform="translate(760, 20)">
+      <rect width="400" height="260" class="card"/>
+      <text x="30" y="40" class="card-title">BROADCASTING &amp; CONTENT</text>
+      
+      <!-- Video Player Aesthetic -->
+      <g transform="translate(30, 70)" style="animation: float 4s infinite ease-in-out;">
+        <rect width="340" height="160" rx="12" fill="#0F172A"/>
+        
+        <!-- Play Button -->
+        <circle cx="170" cy="80" r="25" fill="#EF4444"/>
+        <polygon points="163,68 183,80 163,92" fill="#FFFFFF"/>
+        
+        <!-- UI details -->
+        <rect x="20" y="130" width="200" height="6" rx="3" fill="#334155"/>
+        <rect x="20" y="130" width="80" height="6" rx="3" fill="#EF4444"/>
+        <circle cx="100" cy="133" r="5" fill="#FFFFFF"/>
+        
+        <text x="240" y="135" font-size="12px" fill="#94A3B8" font-weight="600">LIVE</text>
+      </g>
+    </g>
+
+    <!-- ========================================== -->
+    <!-- CARD 3: SYSTEM ACTIVITY (Right Bottom)     -->
+    <!-- ========================================== -->
+    <g transform="translate(760, 300)">
+      <rect width="400" height="260" class="card"/>
+      <text x="30" y="40" class="card-title">SYSTEM METRICS</text>
+
+      <!-- Animated Activity Graph -->
+      <g transform="translate(30, 80)">
+        <!-- Grid lines -->
+        <path d="M 0 30 L 340 30 M 0 80 L 340 80 M 0 130 L 340 130" fill="none" stroke="#F1F5F9" stroke-width="2"/>
+        
+        <!-- The Data Line -->
+        <path d="M 0 120 Q 40 100 80 110 T 160 60 T 240 80 T 320 20" fill="none" stroke="#3B82F6" stroke-width="4" stroke-linecap="round" stroke-dasharray="500" stroke-dashoffset="500" style="animation: drawGraph 3s ease-out forwards;"/>
+        
+        <!-- Glowing Data Point -->
+        <circle cx="320" cy="20" r="6" fill="#3B82F6" style="animation: pulse 1.5s infinite;"/>
+        <circle cx="320" cy="20" r="14" fill="#3B82F6" opacity="0.2" style="animation: pulse 1.5s infinite;"/>
+        
+        <!-- Month Labels -->
+        <text x="10" y="160" font-size="12px" fill="#94A3B8">Design</text>
+        <text x="140" y="160" font-size="12px" fill="#94A3B8">AI Logic</text>
+        <text x="280" y="160" font-size="12px" fill="#94A3B8">Deploy</text>
+      </g>
+    </g>
+
+  </g>
+</svg>
