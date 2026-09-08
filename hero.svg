@@ -1,107 +1,38 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 450" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 350" width="100%" height="100%">
   <defs>
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;500;800;900&amp;family=JetBrains+Mono:wght@400;700&amp;display=swap');
+      @keyframes panGrid { 0% { transform: translateY(0); } 100% { transform: translateY(40px); } }
+      @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+      @keyframes floatY { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
       
-      /* Animations */
-      @keyframes fadeInUp {
-        0% { opacity: 0; transform: translateY(30px); }
-        100% { opacity: 1; transform: translateY(0); }
-      }
-      
-      @keyframes expandLine {
-        0% { width: 0; opacity: 0; }
-        100% { width: 200px; opacity: 1; }
-      }
-
-      @keyframes pulseGlow {
-        0%, 100% { opacity: 0.5; transform: scale(1); }
-        50% { opacity: 0.8; transform: scale(1.05); }
-      }
-
-      @keyframes floatLeftRight {
-        0%, 100% { transform: translateX(0); }
-        50% { transform: translateX(40px); }
-      }
-
-      /* Typography */
-      .badge {
-        font-family: 'JetBrains Mono', monospace; font-size: 14px; font-weight: 700;
-        fill: #00FFCC; letter-spacing: 2px;
-        animation: fadeInUp 1s ease-out forwards;
-      }
-
-      .title { 
-        font-family: 'Inter', sans-serif; font-weight: 900; font-size: 85px; 
-        fill: #FFFFFF; letter-spacing: -3px;
-        animation: fadeInUp 1s ease-out 0.2s forwards; opacity: 0;
-      }
-      
-      .subtitle {
-        font-family: 'Inter', sans-serif; font-weight: 300; font-size: 24px;
-        fill: #A1A1AA; letter-spacing: 1px;
-        animation: fadeInUp 1s ease-out 0.5s forwards; opacity: 0;
-      }
-
-      .glow-line {
-        fill: url(#cyanGradient);
-        animation: expandLine 1.5s cubic-bezier(0.7, 0, 0.3, 1) 0.8s forwards;
-        opacity: 0;
-      }
-
-      /* Orbs Animations */
-      .orb-purple { animation: pulseGlow 6s infinite, floatLeftRight 10s infinite; transform-origin: center; }
-      .orb-cyan { animation: pulseGlow 8s infinite, floatLeftRight 12s infinite reverse; transform-origin: center; }
+      .title { font-family: 'Arial Black', sans-serif; font-size: 75px; fill: #FFFFFF; letter-spacing: -2px; }
+      .tag { font-family: monospace; font-size: 14px; fill: #00E5FF; }
     </style>
-
-    <!-- Glowing Orb Gradients (Safe for all devices) -->
-    <radialGradient id="glowPurple" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#7000FF" stop-opacity="0.4"/>
-      <stop offset="100%" stop-color="#7000FF" stop-opacity="0"/>
-    </radialGradient>
-
-    <radialGradient id="glowCyan" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#00FFCC" stop-opacity="0.3"/>
-      <stop offset="100%" stop-color="#00FFCC" stop-opacity="0"/>
-    </radialGradient>
-
-    <linearGradient id="cyanGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#00FFCC"/>
-      <stop offset="100%" stop-color="#7000FF"/>
-    </linearGradient>
-
-    <!-- Background Grid Pattern -->
-    <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
-      <path d="M 60 0 L 0 0 0 60" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-opacity="0.05"/>
+    <!-- Grid Pattern -->
+    <pattern id="movingGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#FFFFFF" stroke-width="1" stroke-opacity="0.1"/>
     </pattern>
   </defs>
 
-  <!-- Pitch Black Background -->
-  <rect width="1200" height="450" fill="#050505" rx="16" ry="16"/>
+  <rect width="1000" height="350" fill="#0D0E15" rx="15"/>
 
-  <!-- Background Animated Glowing Orbs -->
-  <circle cx="200" cy="225" r="450" fill="url(#glowPurple)" class="orb-purple"/>
-  <circle cx="1000" cy="225" r="500" fill="url(#glowCyan)" class="orb-cyan"/>
+  <!-- Animated Moving Background Grid -->
+  <rect width="1000" height="400" fill="url(#movingGrid)" style="animation: panGrid 3s linear infinite;"/>
 
-  <!-- Overlay Tech Grid -->
-  <rect width="1200" height="450" fill="url(#grid)" rx="16" ry="16"/>
+  <!-- Floating 3D Geometric Graphics -->
+  <g style="animation: floatY 6s infinite ease-in-out;" transform="translate(150, 150)">
+    <polygon points="50,0 100,25 100,75 50,100 0,75 0,25" fill="none" stroke="#00E5FF" stroke-width="3" style="animation: spin 15s linear infinite; transform-origin: 50px 50px;"/>
+  </g>
 
-  <!-- Center Content -->
-  <g transform="translate(600, 160)" text-anchor="middle">
-    
-    <!-- Top Monospace Badge -->
-    <rect x="-115" y="-22" width="230" height="30" fill="#00FFCC" fill-opacity="0.1" rx="15" stroke="#00FFCC" stroke-width="1" style="animation: fadeInUp 1s ease-out forwards;"/>
-    <text x="0" y="-2" class="badge">SAJITHA.HESHAN</text>
+  <g style="animation: floatY 8s infinite ease-in-out reverse;" transform="translate(800, 80)">
+    <polygon points="40,0 80,20 80,60 40,80 0,60 0,20" fill="none" stroke="#FF0055" stroke-width="3" opacity="0.6" style="animation: spin 10s linear infinite reverse; transform-origin: 40px 40px;"/>
+  </g>
 
-    <!-- Huge Impactful Title -->
-    <text x="0" y="80" class="title">THE ARCHITECT</text>
-
-    <!-- Glowing Animated Divider Line -->
-    <rect x="-100" y="125" height="4" rx="2" class="glow-line" />
-
-    <!-- Subtitle Description -->
-    <text x="0" y="190" class="subtitle">Designing <tspan fill="#FFFFFF" font-weight="500">AI-Driven</tspan> logic.</text>
-    <text x="0" y="230" class="subtitle">Building aesthetic digital ecosystems.</text>
-
+  <!-- Typography -->
+  <g transform="translate(500, 180)" text-anchor="middle">
+    <rect x="-80" y="-80" width="160" height="24" fill="#00E5FF" fill-opacity="0.15" rx="12"/>
+    <text x="0" y="-63" class="tag">SYS.ARCHITECT</text>
+    <text x="0" y="20" class="title">SAJITHA</text>
+    <text x="0" y="90" class="title" fill="none" stroke="#FFFFFF" stroke-width="2">HESHAN</text>
   </g>
 </svg>
