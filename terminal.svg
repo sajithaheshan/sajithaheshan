@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 450" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <style>
+      .font-main { font-family: 'JetBrains Mono', 'Courier New', monospace; }
+      .font-sans { font-family: system-ui, -apple-system, sans-serif; }
+      
+      .terminal-header { font-size: 14px; font-weight: bold; fill: #94A3B8; }
+      .terminal-text { font-size: 13px; fill: #00FFCC; }
+      .glow-text { filter: drop-shadow(0 0 8px rgba(0,255,204,0.6)); }
+      
+      @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+      @keyframes scanline { 0% { transform: translateY(0); } 100% { transform: translateY(400px); } }
+    </style>
+
+    <linearGradient id="termGlow" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#020617"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+
+    <!-- Scanline Pattern for the Terminal Glass -->
+    <pattern id="scanlines" width="4" height="4" patternUnits="userSpaceOnUse">
+      <rect width="4" height="2" fill="#000000" opacity="0.3"/>
+    </pattern>
+  </defs>
+
+  <!-- ========================================== -->
+  <!-- TERMINAL WINDOW FRAME                      -->
+  <!-- ========================================== -->
+  <g transform="translate(40, 20)">
+    
+    <!-- Outer Terminal Border with Chamfered Corners -->
+    <path d="M 20 0 L 1100 0 L 1120 20 L 1120 390 L 1100 410 L 20 410 L 0 390 L 0 20 Z" fill="url(#termGlow)" stroke="#1E293B" stroke-width="2"/>
+    
+    <!-- Top Bar of Terminal -->
+    <path d="M 20 0 L 1100 0 L 1120 20 L 1120 40 L 0 40 L 0 20 Z" fill="#09090B"/>
+    <path d="M 0 40 L 1120 40" fill="none" stroke="#1E293B" stroke-width="2"/>
+    
+    <!-- Window Controls (Mac Style) -->
+    <circle cx="30" cy="20" r="6" fill="#EF4444"/>
+    <circle cx="55" cy="20" r="6" fill="#F59E0B"/>
+    <circle cx="80" cy="20" r="6" fill="#10B981"/>
+
+    <!-- Terminal Title -->
+    <text x="560" y="25" text-anchor="middle" class="font-main terminal-header">sajithaheshan@system-metrics:~</text>
+
+    <!-- CRT Screen Scanline Overlay (Inside the terminal body) -->
+    <path d="M 0 40 L 1120 40 L 1120 390 L 1100 410 L 20 410 L 0 390 Z" fill="url(#scanlines)" opacity="0.5"/>
+
+    <!-- ========================================== -->
+    <!-- TERMINAL CONTENT (THE 5% STATS & 95% VIBE) -->
+    <!-- ========================================== -->
+    
+    <!-- Code/Typing aesthetic on the left -->
+    <g class="font-main terminal-text" transform="translate(30, 80)">
+      <text x="0" y="0" fill="#EAB308">SajithaHeshan@MacBook-Pro <tspan fill="#94A3B8">~ %</tspan> ./fetch_analytics.sh</text>
+      
+      <text x="0" y="30" fill="#94A3B8">[+] Authenticating with GitHub API...</text>
+      <text x="0" y="50" fill="#10B981">[✓] Connection Established.</text>
+      
+      <text x="0" y="80" fill="#94A3B8">[+] Fetching Lifetime Commits...</text>
+      <text x="0" y="100" fill="#00FFCC" class="glow-text">> EXTRACTING DATA FROM MATRIX...</text>
+
+      <text x="0" y="140" fill="#94A3B8">[+] Parsing Top Languages...</text>
+      <text x="0" y="160" fill="#00FFCC" class="glow-text">> ANALYZING REPOSITORIES...</text>
+      
+      <!-- Blinking Cursor -->
+      <rect x="0" y="190" width="10" height="15" fill="#00FFCC" style="animation: blink 1s infinite;"/>
+    </g>
+
+    <!-- ========================================== -->
+    <!-- EMBEDDED GITHUB STATS (Using foreignObject)-->
+    <!-- ========================================== -->
+    <!-- Note: We use SVG foreignObject to directly load HTML/Markdown image links inside the SVG! -->
+    
+    <!-- Top Languages Card (Centered right) -->
+    <foreignObject x="420" y="70" width="320" height="200">
+      <div xmlns="http://www.w3.org/1999/xhtml" style="width:100%; height:100%;">
+        <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=sajithaheshan&amp;layout=compact&amp;theme=tokyonight&amp;hide_border=true&amp;bg_color=00000000&amp;title_color=00FFCC&amp;text_color=94A3B8" width="100%" style="border-radius: 8px; border: 1px dashed #334155;" />
+      </div>
+    </foreignObject>
+
+    <!-- Main GitHub Stats Card (Far right) -->
+    <foreignObject x="750" y="70" width="340" height="200">
+      <div xmlns="http://www.w3.org/1999/xhtml" style="width:100%; height:100%;">
+        <img src="https://github-readme-stats.vercel.app/api?username=sajithaheshan&amp;show_icons=true&amp;theme=tokyonight&amp;hide_border=true&amp;bg_color=00000000&amp;title_color=00FFCC&amp;icon_color=00FFCC&amp;text_color=94A3B8" width="100%" style="border-radius: 8px; border: 1px dashed #334155;" />
+      </div>
+    </foreignObject>
+
+    <!-- GitHub Streak Card (Bottom spanning both) -->
+    <foreignObject x="420" y="220" width="670" height="200">
+      <div xmlns="http://www.w3.org/1999/xhtml" style="width:100%; height:100%;">
+        <img src="https://github-readme-streak-stats.herokuapp.com/?user=sajithaheshan&amp;theme=tokyonight&amp;hide_border=true&amp;background=00000000&amp;ring=00FFCC&amp;fire=00FFCC&amp;currStreakLabel=00FFCC" width="100%" style="border-radius: 8px; border: 1px dashed #334155;" />
+      </div>
+    </foreignObject>
+
+    <!-- Moving Laser Scanline over the terminal -->
+    <rect x="0" y="40" width="1120" height="2" fill="#00FFCC" opacity="0.5" style="animation: scanline 4s linear infinite;"/>
+
+  </g>
+</svg>
