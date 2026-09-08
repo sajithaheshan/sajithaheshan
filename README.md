@@ -22,10 +22,4 @@
 
 <br><br>
 
-<div align="center">
-  <img src="./hero.svg?v=1" alt="Sajitha Heshan Hero Section" width="100%" />
-</div>
-
-<div align="center">
-  <img src="./section2.svg?v=1" alt="Workflow and Stats" width="100%" />
-</div>
+<!-- ඊටපස්සේ මෙතනින් යටට අර අපි කලින් කතා කරපු Section 2 (Bento Boxes) ටිකයි, Stats ටිකයි දාගන්න පුළුවන්! -->
