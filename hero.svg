@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300" width="100%" height="100%">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&amp;family=Inter:wght@400;600;800&amp;display=swap');
+      
+      /* Animations */
+      @keyframes fadeUp {
+        0% { opacity: 0; transform: translateY(20px); }
+        100% { opacity: 1; transform: translateY(0); }
+      }
+      
+      @keyframes drawHighlight {
+        0% { stroke-dashoffset: 300; opacity: 0; }
+        20% { opacity: 1; }
+        100% { stroke-dashoffset: 0; opacity: 1; }
+      }
+      
+      @keyframes floatShapes {
+        0% { transform: translate(0, 0) rotate(0deg); }
+        50% { transform: translate(10px, -15px) rotate(5deg); }
+        100% { transform: translate(0, 0) rotate(0deg); }
+      }
+
+      .bg { fill: #FDFBF7; } /* Soft Warm Cream Background */
+      
+      .name { 
+        font-family: 'Inter', sans-serif; 
+        font-weight: 800; 
+        font-size: 16px; 
+        fill: #D97757; /* Warm Terracotta */
+        letter-spacing: 4px;
+        animation: fadeUp 1s ease-out forwards;
+      }
+      
+      .title { 
+        font-family: 'Playfair Display', serif; 
+        font-weight: 700; 
+        font-size: 48px; 
+        fill: #222222;
+        animation: fadeUp 1s ease-out 0.3s forwards;
+        opacity: 0;
+      }
+      
+      .subtitle {
+        font-family: 'Inter', sans-serif;
+        font-weight: 400;
+        font-size: 16px;
+        fill: #666666;
+        animation: fadeUp 1s ease-out 0.6s forwards;
+        opacity: 0;
+      }
+
+      /* The Yellow Motion Highlight */
+      .highlight {
+        stroke: #FFD54F; /* Aesthetic Warm Yellow */
+        stroke-width: 18;
+        stroke-linecap: round;
+        fill: none;
+        stroke-dasharray: 300;
+        stroke-dashoffset: 300;
+        animation: drawHighlight 1.2s cubic-bezier(0.7, 0, 0.3, 1) 1s forwards;
+        opacity: 0;
+      }
+
+      /* Background Aesthetic Graphics */
+      .blob1 { fill: #F4EBE1; animation: floatShapes 8s ease-in-out infinite; }
+      .blob2 { fill: #F9F2E8; animation: floatShapes 10s ease-in-out infinite reverse; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="300" class="bg" rx="15" ry="15"/>
+
+  <!-- Aesthetic Floating Blobs/Graphics in Background -->
+  <circle cx="100" cy="50" r="80" class="blob1" />
+  <circle cx="700" cy="250" r="120" class="blob2" />
+  
+  <path d="M 680 40 L 720 80" stroke="#D97757" stroke-width="2" stroke-linecap="round" opacity="0.4" class="blob1"/>
+  <circle cx="700" cy="40" r="4" fill="#D97757" opacity="0.4" class="blob1"/>
+
+  <!-- Main Content -->
+  <g transform="translate(60, 100)">
+    <!-- Tiny Top Heading -->
+    <text x="0" y="0" class="name">HELLO, I'M SAJITHA</text>
+    
+    <!-- Yellow Animated Highlight (Positioned behind text) -->
+    <path d="M 330 42 Q 410 40 480 44" class="highlight" />
+
+    <!-- Main Hero Text -->
+    <text x="0" y="50" class="title">I design and engineer</text>
+    <text x="0" y="100" class="title">
+      <tspan fill="#222">digital </tspan>
+      <tspan fill="#222">experiences.</tspan>
+    </text>
+
+    <!-- Subtitle / Description -->
+    <text x="0" y="145" class="subtitle">Tech Creator &amp; UI/UX Architect. Translating complex AI</text>
+    <text x="0" y="170" class="subtitle">concepts into aesthetic, scalable realities.</text>
+  </g>
+</svg>
