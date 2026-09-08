@@ -1,6 +1,5 @@
 <div align="center">
-  <!-- The Massive Waving Hero SVG -->
-  <img src="./hero.svg?v=10" alt="Sajitha Heshan Hero Section" width="100%" />
+  <img src="./hero.svg?v=11" alt="Sajitha Heshan Hero Section" width="100%" />
 </div>
 
 <br>
@@ -10,7 +9,6 @@
     ⚡ Connect With Me ⚡
   </p>
   
-  <!-- Clickable Buttons -->
   <a href="https://youtube.com/@YOUR_CHANNEL_USERNAME" target="_blank">
     <img src="https://img.shields.io/badge/Subscribe_to_my_Tech_Channel-FF0000?style=for-the-badge&logo=youtube&logoColor=white" alt="YouTube Channel"/>
   </a>
@@ -19,7 +17,3 @@
     <img src="https://img.shields.io/badge/Connect_on_LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/>
   </a>
 </div>
-
-<br><br>
-
-<!-- ඊටපස්සේ මෙතනින් යටට අර අපි කලින් කතා කරපු Section 2 (Bento Boxes) ටිකයි, Stats ටිකයි දාගන්න පුළුවන්! -->
