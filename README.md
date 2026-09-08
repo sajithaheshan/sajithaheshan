@@ -135,3 +135,11 @@
 </div>
 <br><br>
 
+
+<br>
+
+<div align="center">
+  <img src="./vision.svg?v=1" alt="Vision and Roadmap" width="100%" />
+</div>
+
+<br>
