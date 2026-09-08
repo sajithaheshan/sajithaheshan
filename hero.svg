@@ -1,159 +1,163 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 550" width="100%" height="100%">
-  <!-- 100% GITHUB SAFE CSS (NO EXTERNAL FONTS) -->
-  <style>
-    .title { font-family: system-ui, -apple-system, sans-serif; font-size: 65px; font-weight: 900; fill: #FFFFFF; letter-spacing: -2px; }
-    .subtitle { font-family: system-ui, -apple-system, sans-serif; font-size: 19px; font-weight: 400; fill: #94A3B8; line-height: 1.6; }
-    .tag { font-family: monospace; font-size: 14px; fill: #06B6D4; letter-spacing: 2px; }
-    
-    @keyframes floatMaster { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
-    @keyframes orbit1 { 0% { transform: rotate(0deg) translateX(120px) rotate(0deg); } 100% { transform: rotate(360deg) translateX(120px) rotate(-360deg); } }
-    @keyframes orbit2 { 0% { transform: rotate(180deg) translateX(160px) rotate(-180deg); } 100% { transform: rotate(540deg) translateX(160px) rotate(-540deg); } }
-    @keyframes pulse { 0%, 100% { opacity: 0.3; } 50% { opacity: 0.7; } }
-  </style>
-
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
   <defs>
-    <!-- Ambient Glows -->
-    <radialGradient id="glowCyan" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#06B6D4" stop-opacity="0.2" />
-      <stop offset="100%" stop-color="#06B6D4" stop-opacity="0" />
-    </radialGradient>
-    <radialGradient id="glowPink" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#EC4899" stop-opacity="0.15" />
-      <stop offset="100%" stop-color="#EC4899" stop-opacity="0" />
-    </radialGradient>
-    
-    <!-- Background Tech Pattern -->
-    <pattern id="dotGrid" width="40" height="40" patternUnits="userSpaceOnUse">
-      <circle cx="20" cy="20" r="1.5" fill="#334155" opacity="0.4"/>
-    </pattern>
+    <!-- 100% GITHUB SAFE CSS -->
+    <style>
+      .font-sans { font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+      
+      /* Typography */
+      .main-title { font-size: 70px; font-weight: 900; fill: #FFFFFF; letter-spacing: -2px; }
+      .sub-title { font-size: 20px; font-weight: 400; fill: #A1A1AA; letter-spacing: 1px; }
+      .highlight { fill: #EAB308; } /* Cinematic Gold */
+      
+      .card-title { font-size: 16px; font-weight: 700; fill: #FFFFFF; letter-spacing: 2px; }
+      .card-desc { font-size: 18px; font-weight: 400; fill: #94A3B8; line-height: 1.6; }
+      
+      /* Glassmorphism Card Style */
+      .bento-card { 
+        fill: rgba(20, 20, 25, 0.8); 
+        stroke: rgba(255, 255, 255, 0.1); 
+        stroke-width: 1.5px; 
+        rx: 24px; 
+      }
 
-    <!-- Glass Box Filter -->
-    <filter id="glass" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="15" stdDeviation="20" flood-color="#000000" flood-opacity="0.5"/>
-    </filter>
+      /* Animations */
+      @keyframes spin { 100% { transform: rotate(360deg); } }
+      @keyframes spinReverse { 100% { transform: rotate(-360deg); } }
+      @keyframes pulseGlow { 0%, 100% { opacity: 0.4; transform: scale(1); } 50% { opacity: 0.7; transform: scale(1.05); } }
+      
+      @keyframes floatUp { 0% { opacity: 0; transform: translateY(40px); } 100% { opacity: 1; transform: translateY(0); } }
+      @keyframes floatIcon1 { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
+      @keyframes floatIcon2 { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(12px); } }
+      
+      @keyframes drawGraph { 0% { stroke-dashoffset: 400; } 100% { stroke-dashoffset: 0; } }
+
+      /* Animation Delays for smooth loading */
+      .anim-1 { animation: floatUp 1s ease-out forwards; }
+      .anim-2 { animation: floatUp 1s ease-out 0.2s forwards; opacity: 0; }
+      .anim-3 { animation: floatUp 1s ease-out 0.4s forwards; opacity: 0; }
+    </style>
+
+    <!-- Cinematic Gold Glow -->
+    <radialGradient id="goldGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#EAB308" stop-opacity="0.3"/>
+      <stop offset="50%" stop-color="#EAB308" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
   </defs>
 
-  <!-- Base Canvas -->
-  <rect width="1200" height="550" fill="#09090B" rx="20"/>
-  <rect width="1200" height="550" fill="url(#dotGrid)" rx="20"/>
-  
-  <!-- Glowing Background Orbs -->
-  <circle cx="900" cy="275" r="350" fill="url(#glowCyan)" />
-  <circle cx="300" cy="400" r="300" fill="url(#glowPink)" />
+  <!-- Pitch Black Base Canvas -->
+  <rect width="1200" height="700" fill="#050505" rx="20"/>
 
   <!-- ========================================== -->
-  <!-- LEFT SIDE: HEAVY TEXT & HIGHLIGHT          -->
+  <!-- TOP SECTION: CINEMATIC CENTER HEADER       -->
   <!-- ========================================== -->
-  <g transform="translate(80, 110)">
+  <g transform="translate(600, 180)">
     
-    <!-- Top Cyber Badge -->
-    <g opacity="0">
-      <animate attributeName="opacity" to="1" dur="1s" fill="freeze" begin="0.1s"/>
-      <rect x="0" y="0" width="230" height="34" rx="17" fill="#06B6D4" fill-opacity="0.1" stroke="#06B6D4" stroke-width="1"/>
-      <circle cx="20" cy="17" r="4" fill="#06B6D4" style="animation: pulse 2s infinite;"/>
-      <text x="35" y="22" class="tag">AI SYSTEMS ARCHITECT</text>
-    </g>
-
-    <!-- Yellow Highlight (Built with Native SMIL - Immune to GitHub blocks) -->
-    <path d="M -5 140 Q 150 130 330 140" stroke="#EAB308" stroke-width="26" stroke-linecap="round" fill="none" stroke-dasharray="400" stroke-dashoffset="400">
-      <animate attributeName="stroke-dashoffset" values="400;0" dur="1.2s" fill="freeze" begin="0.6s" calcMode="spline" keySplines="0.4 0 0.2 1" keyTimes="0;1"/>
-    </path>
-
-    <!-- Headline -->
-    <g opacity="0">
-      <animate attributeName="opacity" to="1" dur="1s" fill="freeze" begin="0.3s"/>
-      <animateTransform attributeName="transform" type="translate" values="0,20; 0,0" dur="1s" fill="freeze" begin="0.3s" calcMode="spline" keySplines="0.4 0 0.2 1" keyTimes="0;1"/>
-      <text x="0" y="85" class="title">Engineering the</text>
-      <text x="0" y="155" class="title"><tspan fill="#09090B">next generation.</tspan></text>
-    </g>
-
-    <!-- Heavy Description -->
-    <g opacity="0">
-      <animate attributeName="opacity" to="1" dur="1s" fill="freeze" begin="0.5s"/>
-      <text x="0" y="220" class="subtitle">By bypassing traditional syntax and leveraging <tspan fill="#FFFFFF" font-weight="600">AI capabilities</tspan>,</text>
-      <text x="0" y="255" class="subtitle">I conceptualize, design, and architect scalable digital</text>
-      <text x="0" y="290" class="subtitle">ecosystems. I prioritize high-end visual aesthetics paired</text>
-      <text x="0" y="325" class="subtitle">with robust, modern systemic logic.</text>
-    </g>
-
-    <!-- The Tech Stack Badges (100% SVG Paths) -->
-    <g opacity="0">
-      <animate attributeName="opacity" to="1" dur="1s" fill="freeze" begin="0.8s"/>
-      <text x="0" y="395" class="tag" fill="#64748B">CORE ARSENAL // LIVE STACK</text>
-      
-      <!-- Figma Badge -->
-      <g transform="translate(0, 415)">
-        <rect width="48" height="48" rx="12" fill="#18181B" stroke="#334155" stroke-width="1"/>
-        <g transform="translate(14, 11) scale(0.8)">
-          <path d="M16 16c4.4 0 8-3.6 8-8s-3.6-8-8-8-8 3.6-8 8 3.6 8 8 8z" fill="#F24E1E"/><path d="M8 16c-4.4 0-8 3.6-8 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8z" fill="#A259FF"/><path d="M16 32c4.4 0 8-3.6 8-8s-3.6-8-8-8h-8v16h8z" fill="#1ABCFE"/><path d="M8 32c-4.4 0-8 3.6-8 8s3.6 8 8 8 8-3.6 8-8v-8H8z" fill="#0ACF83"/><path d="M16 0h8v16h-8V0z" fill="#FF7262"/>
-        </g>
-      </g>
-
-      <!-- React Badge -->
-      <g transform="translate(60, 415)">
-        <rect width="48" height="48" rx="12" fill="#18181B" stroke="#334155" stroke-width="1"/>
-        <g transform="translate(24, 24) scale(0.85)">
-          <circle cx="0" cy="0" r="3" fill="#61DAFB"/>
-          <ellipse rx="13" ry="5" fill="none" stroke="#61DAFB" stroke-width="2" transform="rotate(30)"/><ellipse rx="13" ry="5" fill="none" stroke="#61DAFB" stroke-width="2" transform="rotate(90)"/><ellipse rx="13" ry="5" fill="none" stroke="#61DAFB" stroke-width="2" transform="rotate(150)"/>
-        </g>
-      </g>
-
-      <!-- JS Badge -->
-      <g transform="translate(120, 415)">
-        <rect width="48" height="48" rx="12" fill="#18181B" stroke="#334155" stroke-width="1"/>
-        <g transform="translate(14, 14) scale(0.65)">
-          <rect width="30" height="30" fill="#F7DF1E"/>
-          <path d="M22 25c-1 1-2.5 1.5-4 1.5-2.5 0-4-1-4.5-2l2.5-1.5c.5.5 1.5 1 2 1 1 0 1.5-.5 1.5-1 0-1.5-4-1.5-4-3.5 0-1.5 1.5-2.5 3.5-2.5 1.5 0 2.5.5 3.5 1.5l-2 1.5c-.5-.5-1-1-1.5-1-.5 0-1 .5-1 1 0 1.5 4 1.5 4 3.5 0 1.5-1.5 2.5-2.5 2.5zM11 26.5c-1.5 0-2.5-.5-3.5-1.5l2-1.5c.5.5 1.5 1 2 1 .5 0 1-.5 1-2V15h3v7.5c0 2.5-1.5 4-4.5 4z" fill="#000000"/>
-        </g>
-      </g>
-
-      <!-- Python Badge -->
-      <g transform="translate(180, 415)">
-        <rect width="48" height="48" rx="12" fill="#18181B" stroke="#334155" stroke-width="1"/>
-        <g transform="translate(14, 14) scale(0.65)">
-          <path d="M14.7 0c-7 0-7.8 3.2-7.8 3.2l.1 3.3h7.8v1.1H5s-3.4-.2-3.4 5c0 5.2 3 5.2 3 5.2h2v-3.5s0-2.2 2.3-2.2h5c2.2 0 2.2-2.3 2.2-2.3V2.1S18.5 0 14.7 0zm-1.8 1.5c.7 0 1.2.6 1.2 1.3s-.5 1.3-1.2 1.3-1.2-.6-1.2-1.3.5-1.3 1.2-1.3zm12.3 7.6s-1.1-5-7.7-5h-2v3.5s0 2.3-2.3 2.3h-4.9c-2.3 0-2.3 2.3-2.3 2.3v7.7s.1 3.3 7.8 3.3c7.7 0 7.7-3.3 7.7-3.3l-.1-3.3h-7.7v-1.1h9.9s3.3.1 3.3-5.2c0-5.1-3.1-5.1-3.1-5.1zm-8.8 8.4c-.7 0-1.2-.6-1.2-1.3s.5-1.3 1.2-1.3 1.2.6 1.2 1.3-.5 1.3-1.2 1.3z" fill="#3776AB"/>
-        </g>
-      </g>
-    </g>
+    <!-- Pulsing Gold Aura -->
+    <circle cx="0" cy="0" r="450" fill="url(#goldGlow)" style="animation: pulseGlow 6s infinite ease-in-out;"/>
+    
+    <!-- Rotating Tech Rings (Architect Vibe) -->
+    <circle cx="0" cy="0" r="300" fill="none" stroke="#FFFFFF" stroke-width="1" stroke-dasharray="10 40" stroke-opacity="0.1" style="animation: spin 40s linear infinite;"/>
+    <circle cx="0" cy="0" r="260" fill="none" stroke="#EAB308" stroke-width="2" stroke-dasharray="4 20" stroke-opacity="0.4" style="animation: spinReverse 30s linear infinite;"/>
+    <circle cx="0" cy="0" r="220" fill="none" stroke="#FFFFFF" stroke-width="1" stroke-opacity="0.05"/>
   </g>
 
+  <!-- Header Text -->
+  <g class="font-sans anim-1" transform="translate(600, 120)" text-anchor="middle">
+    <!-- Cyber Badge -->
+    <rect x="-90" y="-40" width="180" height="30" rx="15" fill="#EAB308" fill-opacity="0.1" stroke="#EAB308" stroke-width="1"/>
+    <circle cx="-65" cy="-25" r="4" fill="#EAB308" style="animation: pulseGlow 2s infinite;"/>
+    <text x="10" y="-20" font-size="12px" font-weight="700" fill="#EAB308" letter-spacing="2px">SYSTEM ONLINE</text>
+
+    <!-- Main Title -->
+    <text x="0" y="40" class="main-title">SAJITHA HESHAN</text>
+    <text x="0" y="110" class="main-title">THE <tspan class="highlight">ARCHITECT.</tspan></text>
+    <text x="0" y="160" class="sub-title">Designing aesthetic UI/UX &amp; building scalable AI-driven ecosystems.</text>
+  </g>
+
+
   <!-- ========================================== -->
-  <!-- RIGHT SIDE: THE QUANTUM NODE (MOTION)      -->
+  <!-- BOTTOM SECTION: THE BENTO UI GRID          -->
   <!-- ========================================== -->
-  <g transform="translate(900, 275)" style="animation: floatMaster 6s ease-in-out infinite;">
+  
+  <g class="font-sans" transform="translate(50, 350)">
     
-    <!-- Outer Orbit Rings -->
-    <circle cx="0" cy="0" r="160" fill="none" stroke="#334155" stroke-width="1" stroke-dasharray="4 8"/>
-    <circle cx="0" cy="0" r="120" fill="none" stroke="#06B6D4" stroke-width="1" opacity="0.3"/>
-
-    <!-- Orbiting Data Packets -->
-    <g style="animation: orbit1 8s linear infinite;">
-      <circle cx="0" cy="0" r="8" fill="#EC4899" filter="url(#glass)"/>
-      <path d="M-15,0 L15,0 M0,-15 L0,15" stroke="#EC4899" stroke-width="2" opacity="0.5"/>
+    <!-- CARD 1: The Vision (Left Heavy Text Box) -->
+    <g class="anim-2">
+      <rect x="0" y="0" width="480" height="300" class="bento-card"/>
+      <g transform="translate(40, 50)">
+        <text x="0" y="0" class="card-title">01 // THE VISION</text>
+        <rect x="0" y="20" width="40" height="4" rx="2" fill="#EAB308"/>
+        
+        <text x="0" y="80" class="card-desc">I bridge the gap between high-end</text>
+        <text x="0" y="115" class="card-desc">visual design and complex <tspan fill="#FFFFFF" font-weight="700">AI-driven</tspan></text>
+        <text x="0" y="150" class="card-desc">development. By stepping outside</text>
+        <text x="0" y="185" class="card-desc">the traditional database, I architect</text>
+        <text x="0" y="220" class="card-desc">scalable, modern digital products</text>
+        <text x="0" y="255" class="card-desc">that prioritize systemic efficiency.</text>
+      </g>
     </g>
-    
-    <g style="animation: orbit2 12s linear infinite;">
-      <circle cx="0" cy="0" r="12" fill="#EAB308" filter="url(#glass)"/>
-      <circle cx="0" cy="0" r="4" fill="#09090B"/>
+
+    <!-- CARD 2: System Logic (Middle Animated Graphic) -->
+    <g class="anim-3" transform="translate(510, 0)">
+      <rect x="0" y="0" width="350" height="300" class="bento-card"/>
+      <g transform="translate(40, 50)">
+        <text x="0" y="0" class="card-title">02 // SYSTEM LOGIC</text>
+        
+        <!-- Animated UI Graph -->
+        <g transform="translate(0, 50)">
+          <!-- Grid Lines -->
+          <path d="M0 40 L270 40 M0 100 L270 100 M0 160 L270 160" fill="none" stroke="#FFFFFF" stroke-opacity="0.05" stroke-width="1"/>
+          
+          <!-- Animated Gold Graph Line -->
+          <path d="M0 160 Q 60 40 130 90 T 260 20" fill="none" stroke="#EAB308" stroke-width="4" stroke-linecap="round" stroke-dasharray="400" stroke-dashoffset="400" style="animation: drawGraph 2s cubic-bezier(0.7, 0, 0.3, 1) infinite alternate;"/>
+          
+          <!-- Glowing Node -->
+          <circle cx="260" cy="20" r="6" fill="#FFFFFF" style="animation: floatIcon1 2s infinite alternate;"/>
+          <circle cx="260" cy="20" r="14" fill="#EAB308" opacity="0.3" style="animation: floatIcon1 2s infinite alternate;"/>
+        </g>
+      </g>
     </g>
 
-    <!-- Central Glass Node (3D looking structure) -->
-    <path d="M0 -60 L50 -30 L50 30 L0 60 L-50 30 L-50 -30 Z" fill="#06B6D4" opacity="0.1" stroke="#06B6D4" stroke-width="2" filter="url(#glass)"/>
-    <path d="M0 -60 L50 -30 L0 0 L-50 -30 Z" fill="#06B6D4" opacity="0.3"/>
-    <path d="M0 0 L50 -30 L50 30 L0 60 Z" fill="#06B6D4" opacity="0.1"/>
-    
-    <!-- Core Energy -->
-    <circle cx="0" cy="0" r="20" fill="#FFFFFF" style="animation: pulse 3s infinite;"/>
-    <circle cx="0" cy="0" r="8" fill="#06B6D4"/>
-    
-    <!-- Floating Data Cards around Node -->
-    <rect x="40" y="-80" width="80" height="30" rx="8" fill="#18181B" stroke="#334155" stroke-width="1" filter="url(#glass)"/>
-    <rect x="50" y="-70" width="40" height="4" rx="2" fill="#06B6D4"/>
-    <rect x="50" y="-62" width="60" height="4" rx="2" fill="#334155"/>
+    <!-- CARD 3: Core Arsenal (Right Floating Icons) -->
+    <g class="anim-2" transform="translate(890, 0)">
+      <rect x="0" y="0" width="210" height="300" class="bento-card"/>
+      <g transform="translate(35, 50)">
+        <text x="0" y="0" class="card-title">03 // STACK</text>
 
-    <rect x="-120" y="40" width="90" height="40" rx="8" fill="#18181B" stroke="#334155" stroke-width="1" filter="url(#glass)"/>
-    <circle cx="-100" cy="60" r="8" fill="#EC4899"/>
-    <rect x="-85" y="58" width="45" height="4" rx="2" fill="#334155"/>
+        <!-- Floating Figma Logo -->
+        <g transform="translate(10, 40)" style="animation: floatIcon1 4s infinite ease-in-out;">
+          <rect width="50" height="50" rx="14" fill="#18181B" stroke="#333" stroke-width="1"/>
+          <g transform="translate(15, 12) scale(0.8)">
+            <path d="M16 16c4.4 0 8-3.6 8-8s-3.6-8-8-8-8 3.6-8 8 3.6 8 8 8z" fill="#F24E1E"/>
+            <path d="M8 16c-4.4 0-8 3.6-8 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8z" fill="#A259FF"/>
+            <path d="M16 32c4.4 0 8-3.6 8-8s-3.6-8-8-8h-8v16h8z" fill="#1ABCFE"/>
+            <path d="M8 32c-4.4 0-8 3.6-8 8s3.6 8 8 8 8-3.6 8-8v-8H8z" fill="#0ACF83"/>
+            <path d="M16 0h8v16h-8V0z" fill="#FF7262"/>
+          </g>
+        </g>
 
+        <!-- Floating React Logo -->
+        <g transform="translate(80, 80)" style="animation: floatIcon2 5s infinite ease-in-out;">
+          <rect width="50" height="50" rx="14" fill="#18181B" stroke="#333" stroke-width="1"/>
+          <g transform="translate(25, 25) scale(0.9)">
+            <circle cx="0" cy="0" r="3" fill="#61DAFB"/>
+            <ellipse rx="13" ry="5" fill="none" stroke="#61DAFB" stroke-width="2" transform="rotate(30)"/>
+            <ellipse rx="13" ry="5" fill="none" stroke="#61DAFB" stroke-width="2" transform="rotate(90)"/>
+            <ellipse rx="13" ry="5" fill="none" stroke="#61DAFB" stroke-width="2" transform="rotate(150)"/>
+          </g>
+        </g>
+
+        <!-- Floating JS Logo -->
+        <g transform="translate(10, 140)" style="animation: floatIcon1 6s infinite ease-in-out;">
+          <rect width="50" height="50" rx="14" fill="#18181B" stroke="#333" stroke-width="1"/>
+          <g transform="translate(15, 15) scale(0.7)">
+            <rect width="30" height="30" fill="#F7DF1E"/>
+            <path d="M22 25c-1 1-2.5 1.5-4 1.5-2.5 0-4-1-4.5-2l2.5-1.5c.5.5 1.5 1 2 1 1 0 1.5-.5 1.5-1 0-1.5-4-1.5-4-3.5 0-1.5 1.5-2.5 3.5-2.5 1.5 0 2.5.5 3.5 1.5l-2 1.5c-.5-.5-1-1-1.5-1-.5 0-1 .5-1 1 0 1.5 4 1.5 4 3.5 0 1.5-1.5 2.5-2.5 2.5zM11 26.5c-1.5 0-2.5-.5-3.5-1.5l2-1.5c.5.5 1.5 1 2 1 .5 0 1-.5 1-2V15h3v7.5c0 2.5-1.5 4-4.5 4z" fill="#000000"/>
+          </g>
+        </g>
+
+      </g>
+    </g>
   </g>
 </svg>
