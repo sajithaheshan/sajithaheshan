@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <!-- 100% GITHUB SAFE CSS -->
+    <style>
+      .title-main { font-family: system-ui, -apple-system, sans-serif; font-size: 40px; font-weight: 900; fill: #FFFFFF; letter-spacing: 1px; }
+      .tag { font-family: monospace; font-size: 14px; font-weight: bold; fill: #00E5FF; letter-spacing: 3px; }
+      .node-text { font-family: system-ui, -apple-system, sans-serif; font-size: 16px; font-weight: 700; fill: #FFFFFF; }
+      .node-sub { font-family: monospace; font-size: 12px; fill: #94A3B8; }
+      
+      @keyframes float1 { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
+      @keyframes float2 { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(12px); } }
+      @keyframes spinSlow { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+      @keyframes pulseGlow { 0%, 100% { filter: drop-shadow(0 0 10px rgba(0, 229, 255, 0.2)); } 50% { filter: drop-shadow(0 0 25px rgba(0, 229, 255, 0.8)); } }
+      @keyframes dataFlow { 0% { stroke-dashoffset: 100; } 100% { stroke-dashoffset: 0; } }
+      @keyframes radarSweep { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+    </style>
+
+    <radialGradient id="glowCore" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#00E5FF" stop-opacity="0.15" />
+      <stop offset="100%" stop-color="#00E5FF" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="glowPink" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FF007F" stop-opacity="0.1" />
+      <stop offset="100%" stop-color="#FF007F" stop-opacity="0" />
+    </radialGradient>
+    
+    <pattern id="hexGrid" width="60" height="34.6" patternUnits="userSpaceOnUse">
+      <path d="M 60 17.3 L 45 34.6 L 15 34.6 L 0 17.3 L 15 0 L 45 0 Z" fill="none" stroke="#334155" stroke-width="0.5" stroke-opacity="0.3"/>
+    </pattern>
+  </defs>
+
+  <!-- Base Dark Canvas -->
+  <rect width="1200" height="600" fill="#050505" rx="20"/>
+  <rect width="1200" height="600" fill="url(#hexGrid)" rx="20"/>
+  
+  <circle cx="600" cy="300" r="400" fill="url(#glowCore)" />
+  <circle cx="200" cy="150" r="300" fill="url(#glowPink)" />
+
+  <!-- ========================================== -->
+  <!-- CENTER: THE CORE & RADAR                   -->
+  <!-- ========================================== -->
+  <g transform="translate(600, 300)">
+    <!-- Animated Radar Rings -->
+    <circle cx="0" cy="0" r="220" fill="none" stroke="#1E293B" stroke-width="2"/>
+    <circle cx="0" cy="0" r="140" fill="none" stroke="#00E5FF" stroke-width="1" stroke-dasharray="10 15" style="animation: spinSlow 20s linear infinite;"/>
+    
+    <!-- Central Core Processor -->
+    <polygon points="0,-60 52,-30 52,30 0,60 -52,30 -52,-30" fill="#00E5FF" fill-opacity="0.1" stroke="#00E5FF" stroke-width="3" style="animation: pulseGlow 3s infinite;"/>
+    <circle cx="0" cy="0" r="20" fill="#00E5FF" />
+    <circle cx="0" cy="0" r="40" fill="none" stroke="#00E5FF" stroke-width="1" stroke-dasharray="4 4" style="animation: spinSlow 5s linear infinite reverse;"/>
+  </g>
+
+  <!-- Data Flow Lines connecting the Nodes -->
+  <path d="M 600 300 L 250 150" fill="none" stroke="#00E5FF" stroke-width="2" stroke-dasharray="8 8" opacity="0.5" style="animation: dataFlow 1s linear infinite reverse;"/>
+  <path d="M 600 300 L 250 450" fill="none" stroke="#00E5FF" stroke-width="2" stroke-dasharray="8 8" opacity="0.5" style="animation: dataFlow 1.5s linear infinite reverse;"/>
+  <path d="M 600 300 L 950 150" fill="none" stroke="#00E5FF" stroke-width="2" stroke-dasharray="8 8" opacity="0.5" style="animation: dataFlow 1s linear infinite reverse;"/>
+  <path d="M 600 300 L 950 450" fill="none" stroke="#00E5FF" stroke-width="2" stroke-dasharray="8 8" opacity="0.5" style="animation: dataFlow 1.5s linear infinite reverse;"/>
+
+  <!-- ========================================== -->
+  <!-- TOP LEFT: AI INTELLIGENCE NODE             -->
+  <!-- ========================================== -->
+  <g transform="translate(250, 150)" style="animation: float1 5s infinite ease-in-out;">
+    <polygon points="0,-50 43,-25 43,25 0,50 -43,25 -43,-25" fill="#18181B" stroke="#00E5FF" stroke-width="2"/>
+    <circle cx="0" cy="0" r="5" fill="#00E5FF" style="animation: pulseGlow 2s infinite;"/>
+    <text x="0" y="75" text-anchor="middle" class="node-text">AI ARCHITECTURE</text>
+    <text x="0" y="95" text-anchor="middle" class="node-sub">Claude 3.5 // ChatGPT // Copilot</text>
+    <!-- Mini floating data blocks -->
+    <rect x="-60" y="-30" width="10" height="10" fill="#FF007F" style="animation: float2 3s infinite;"/>
+    <rect x="50" y="10" width="8" height="8" fill="#FF007F" style="animation: float1 4s infinite;"/>
+  </g>
+
+  <!-- ========================================== -->
+  <!-- BOTTOM LEFT: UI/UX DESIGN NODE             -->
+  <!-- ========================================== -->
+  <g transform="translate(250, 450)" style="animation: float2 6s infinite ease-in-out;">
+    <polygon points="0,-50 43,-25 43,25 0,50 -43,25 -43,-25" fill="#18181B" stroke="#FF007F" stroke-width="2"/>
+    <circle cx="0" cy="0" r="5" fill="#FF007F" style="animation: pulseGlow 2s infinite;"/>
+    <text x="0" y="75" text-anchor="middle" class="node-text">VISUAL PROTOTYPING</text>
+    <text x="0" y="95" text-anchor="middle" class="node-sub">Figma // Canva // UI Research</text>
+    <rect x="40" y="-40" width="12" height="12" fill="#00E5FF" style="animation: float1 4s infinite;"/>
+  </g>
+
+  <!-- ========================================== -->
+  <!-- TOP RIGHT: CORE TECH NODE                  -->
+  <!-- ========================================== -->
+  <g transform="translate(950, 150)" style="animation: float2 7s infinite ease-in-out reverse;">
+    <polygon points="0,-50 43,-25 43,25 0,50 -43,25 -43,-25" fill="#18181B" stroke="#EAB308" stroke-width="2"/>
+    <circle cx="0" cy="0" r="5" fill="#EAB308" style="animation: pulseGlow 2s infinite;"/>
+    <text x="0" y="75" text-anchor="middle" class="node-text">CORE FUNDAMENTALS</text>
+    <text x="0" y="95" text-anchor="middle" class="node-sub">JavaScript // HTML5 // CSS3</text>
+    <rect x="-50" y="-20" width="8" height="8" fill="#00E5FF" style="animation: float1 3s infinite;"/>
+  </g>
+
+  <!-- ========================================== -->
+  <!-- BOTTOM RIGHT: LOGIC NODE                   -->
+  <!-- ========================================== -->
+  <g transform="translate(950, 450)" style="animation: float1 5.5s infinite ease-in-out reverse;">
+    <polygon points="0,-50 43,-25 43,25 0,50 -43,25 -43,-25" fill="#18181B" stroke="#A855F7" stroke-width="2"/>
+    <circle cx="0" cy="0" r="5" fill="#A855F7" style="animation: pulseGlow 2s infinite;"/>
+    <text x="0" y="75" text-anchor="middle" class="node-text">BACKEND LOGIC</text>
+    <text x="0" y="95" text-anchor="middle" class="node-sub">Python // Logic Flow // APIs</text>
+    <rect x="45" y="25" width="10" height="10" fill="#FF007F" style="animation: float2 3.5s infinite;"/>
+  </g>
+
+  <!-- ========================================== -->
+  <!-- TOP HEADER TEXT                            -->
+  <!-- ========================================== -->
+  <g transform="translate(600, 60)" text-anchor="middle">
+    <rect x="-100" y="-25" width="200" height="34" rx="17" fill="#00E5FF" fill-opacity="0.1" stroke="#00E5FF" stroke-width="1"/>
+    <text x="0" y="-4" class="tag">SYSTEM ARSENAL</text>
+  </g>
+
+</svg>
