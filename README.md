@@ -57,68 +57,24 @@
 <br>
 <br>
 
-<!-- ========================================== -->
-<!-- 🛠️ CORE ARSENAL / TECH STACK (LUXURY UI)  -->
-<!-- ========================================== -->
+<br><br>
 
+<!-- THE GOD-TIER ARSENAL SVG -->
 <div align="center">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/1x1.png" height="20">
-  <p style="margin: 0; font-family: 'Courier New', monospace; font-size: 11px; font-weight: bold; color: #B38F6B; letter-spacing: 3px; text-transform: uppercase;">
-    &mdash; The Arsenal &mdash;
-  </p>
-  <h2 style="margin: 10px 0 30px 0; font-family: 'Georgia', 'Times New Roman', serif; color: #2A2725; font-size: 26px; font-weight: normal; letter-spacing: 0.5px;">
-    Weapons of Mass Creation
-  </h2>
+  <img src="./core-processor.svg?v=1" alt="Tech Arsenal Core" width="100%" />
 </div>
 
-<div align="center">
-  <table width="100%" style="border-collapse: separate; border-spacing: 15px 0; border: none; max-width: 950px;">
-    <tr>   
-      <!-- Category 1: Design -->
-      <td width="33%" valign="top" style="background-color: #FFFFFF; border: 1px solid #EAE5DF; border-radius: 10px; padding: 25px;">
-        <h3 style="margin: 0 0 5px 0; font-family: -apple-system, sans-serif; color: #2A2725; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">
-          Design &amp; UI
-        </h3>
-        <p style="margin: 0 0 20px 0; font-family: 'Georgia', serif; color: #736D66; font-size: 13px; font-style: italic;">
-          Visualizing the concepts.
-        </p>     
-        <!-- Custom Monochrome Badges -->
-        <img src="https://img.shields.io/badge/Figma-F9F8F6?style=flat-square&logo=figma&logoColor=2A2725&labelColor=F9F8F6&color=EAE5DF" style="margin-bottom: 5px;"/>
-        <img src="https://img.shields.io/badge/Canva-F9F8F6?style=flat-square&logo=canva&logoColor=2A2725&labelColor=F9F8F6&color=EAE5DF" style="margin-bottom: 5px;"/>
-        <br>
-        <img src="https://img.shields.io/badge/Wireframing-F9F8F6?style=flat-square&logo=balsamiq&logoColor=2A2725&labelColor=F9F8F6&color=EAE5DF" style="margin-bottom: 5px;"/>
-      </td>
-      <!-- Category 2: AI Logic -->
-      <td width="33%" valign="top" style="background-color: #FFFFFF; border: 1px solid #EAE5DF; border-radius: 10px; padding: 25px;">
-        <h3 style="margin: 0 0 5px 0; font-family: -apple-system, sans-serif; color: #2A2725; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">
-          AI Architecture
-        </h3>
-        <p style="margin: 0 0 20px 0; font-family: 'Georgia', serif; color: #736D66; font-size: 13px; font-style: italic;">
-          Generating the logic.
-        </p>
-        <!-- Custom Monochrome Badges -->
-        <img src="https://img.shields.io/badge/ChatGPT-F9F8F6?style=flat-square&logo=openai&logoColor=2A2725&labelColor=F9F8F6&color=EAE5DF" style="margin-bottom: 5px;"/>
-        <img src="https://img.shields.io/badge/Claude_3.5-F9F8F6?style=flat-square&logo=anthropic&logoColor=2A2725&labelColor=F9F8F6&color=EAE5DF" style="margin-bottom: 5px;"/>
-        <br>
-        <img src="https://img.shields.io/badge/GitHub_Copilot-F9F8F6?style=flat-square&logo=github&logoColor=2A2725&labelColor=F9F8F6&color=EAE5DF" style="margin-bottom: 5px;"/>
-      </td>
-      <!-- Category 3: Core Build -->
-      <td width="33%" valign="top" style="background-color: #FFFFFF; border: 1px solid #EAE5DF; border-radius: 10px; padding: 25px;">
-        <h3 style="margin: 0 0 5px 0; font-family: -apple-system, sans-serif; color: #2A2725; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">
-          Core Build
-        </h3>
-        <p style="margin: 0 0 20px 0; font-family: 'Georgia', serif; color: #736D66; font-size: 13px; font-style: italic;">
-          Mastering the fundamentals.
-        </p>
-        <!-- Custom Monochrome Badges -->
-        <img src="https://img.shields.io/badge/HTML5-F9F8F6?style=flat-square&logo=html5&logoColor=2A2725&labelColor=F9F8F6&color=EAE5DF" style="margin-bottom: 5px;"/>
-        <img src="https://img.shields.io/badge/CSS3-F9F8F6?style=flat-square&logo=css3&logoColor=2A2725&labelColor=F9F8F6&color=EAE5DF" style="margin-bottom: 5px;"/>
-        <br>
-        <img src="https://img.shields.io/badge/JavaScript-F9F8F6?style=flat-square&logo=javascript&logoColor=2A2725&labelColor=F9F8F6&color=EAE5DF" style="margin-bottom: 5px;"/>
-        <img src="https://img.shields.io/badge/Python-F9F8F6?style=flat-square&logo=python&logoColor=2A2725&labelColor=F9F8F6&color=EAE5DF" style="margin-bottom: 5px;"/>
-      </td>
+<br>
 
-    </tr>
-  </table>
+<!-- LIVE SYSTEM METRICS (Dark Theme) -->
+<h3 align="center" style="font-family: -apple-system, sans-serif; color: #94A3B8; text-transform: uppercase; letter-spacing: 2px;">
+  Live System Metrics
+</h3>
+
+<div align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=sajithaheshan&show_icons=true&bg_color=050505&hide_border=true&title_color=00E5FF&icon_color=FF007F&text_color=94A3B8" alt="GitHub Stats" width="400"/>
+  
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=sajithaheshan&layout=compact&bg_color=050505&hide_border=true&title_color=00E5FF&text_color=94A3B8" alt="Top Languages" width="400"/>
 </div>
+
 <br><br>
