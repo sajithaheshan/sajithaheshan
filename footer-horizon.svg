@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" width="100%" height="100%" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <style>
+      .font-main { font-family: -apple-system, system-ui, sans-serif; }
+      
+      .title { font-size: 44px; font-weight: 800; fill: #FFFFFF; letter-spacing: -2px; }
+      .subtitle { font-size: 17px; font-weight: 400; fill: #C7CBD1; }
+      
+      @keyframes pulseGlow {
+        0%, 100% { opacity: 0.4; transform: scale(1); }
+        50% { opacity: 0.8; transform: scale(1.05); }
+      }
+      @keyframes floatSun {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-12px); }
+      }
+    </style>
+
+    <!-- Soft Dark Background -->
+    <linearGradient id="bg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0A0A0F"/>
+      <stop offset="100%" stop-color="#1A1523"/>
+    </linearGradient>
+
+    <!-- Glowing Sun / Horizon Gradient (Warm Peach) -->
+    <radialGradient id="sunGlow" cx="50%" cy="100%" r="60%">
+      <stop offset="0%" stop-color="#FF8A65" stop-opacity="0.4"/>
+      <stop offset="60%" stop-color="#FFB74D" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Horizon Line Gradient -->
+    <linearGradient id="lineGrad" x1="0%" y1="50%" x2="100%" y2="50%">
+      <stop offset="0%" stop-color="#FF8A65" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#FF8A65" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#FF8A65" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Base Canvas -->
+  <rect width="1200" height="300" fill="url(#bg)" rx="20"/>
+  
+  <!-- Warm Glow at the Bottom -->
+  <rect width="1200" height="300" fill="url(#sunGlow)" rx="20"/>
+
+  <!-- Animated Sun (Floating softly) -->
+  <g transform="translate(600, 240)" style="animation: floatSun 6s infinite ease-in-out;">
+    <circle cx="0" cy="0" r="80" fill="#FFB74D" opacity="0.15" style="animation: pulseGlow 4s infinite ease-in-out;"/>
+    <circle cx="0" cy="0" r="55" fill="#FF8A65" opacity="0.25" style="animation: pulseGlow 4s infinite ease-in-out alternate;"/>
+    <circle cx="0" cy="0" r="35" fill="#FFD54F" opacity="0.6"/>
+  </g>
+
+  <!-- Horizon Line (Subtle) -->
+  <path d="M 100 255 L 1100 255" fill="none" stroke="url(#lineGrad)" stroke-width="2"/>
+
+  <!-- ========================================== -->
+  <!-- CENTER: THANK YOU MESSAGE                  -->
+  <!-- ========================================== -->
+  <g class="font-main" transform="translate(600, 120)" text-anchor="middle">
+    
+    <!-- Big Title -->
+    <text x="0" y="0" class="title">Thanks for stopping by.</text>
+    
+    <!-- Subtitle -->
+    <text x="0" y="42" class="subtitle">Let's create something beautiful together.</text>
+
+    <!-- Small Divider (Minimal) -->
+    <path d="M -80 80 L 80 80" fill="none" stroke="#FF8A65" stroke-width="1.5" stroke-linecap="round"/>
+    <circle cx="0" cy="80" r="4" fill="#FF8A65"/>
+  </g>
+
+  <!-- ========================================== -->
+  <!-- BTTOM: SOCIAL ICONS (Minimal Circles)      -->
+  <!-- ========================================== -->
+  <g transform="translate(600, 270)" text-anchor="middle">
+    
+    <!-- YouTube Icon (Circle) -->
+    <g transform="translate(-70, 0)">
+      <circle cx="0" cy="0" r="18" fill="#1E1E2E" stroke="#FF8A65" stroke-width="1" opacity="0.9"/>
+      <path d="M-7 -4 L7 0 L-7 4 Z" fill="#FFD54F"/>
+    </g>
+
+    <!-- LinkedIn Icon (Circle) -->
+    <g transform="translate(0, 0)">
+      <circle cx="0" cy="0" r="18" fill="#1E1E2E" stroke="#FF8A65" stroke-width="1" opacity="0.9"/>
+      <rect x="-4" y="-8" width="3" height="10" fill="#FFD54F"/>
+      <circle cx="-4" cy="-10" r="2" fill="#FFD54F"/>
+      <rect x="2" y="-5" width="3" height="7" fill="#FFD54F"/>
+      <circle cx="3.5" cy="-7" r="2" fill="#FFD54F"/>
+    </g>
+
+    <!-- X/Twitter Icon (Circle) -->
+    <g transform="translate(70, 0)">
+      <circle cx="0" cy="0" r="18" fill="#1E1E2E" stroke="#FF8A65" stroke-width="1" opacity="0.9"/>
+      <path d="M-6 -6 L6 6 M6 -6 L-6 6" stroke="#FFD54F" stroke-width="2" stroke-linecap="round"/>
+    </g>
+
+  </g>
+
+</svg>
