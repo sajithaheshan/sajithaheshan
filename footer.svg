@@ -6,7 +6,7 @@
       .end-text { font-size: 28px; font-weight: 900; fill: #FFFFFF; letter-spacing: 4px; }
       .sub-text { font-size: 14px; font-weight: 500; fill: #94A3B8; letter-spacing: 2px; text-transform: uppercase; }
       .radar-text { font-size: 10px; font-family: monospace; fill: #00FFCC; opacity: 0.8; }
-      
+       
       /* Pure SVG Animations */
       @keyframes radarSpin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
       @keyframes pulseGlow { 0%, 100% { transform: scale(1); opacity: 0.3; } 50% { transform: scale(1.5); opacity: 0.8; } }
