@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 350" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <style>
+      .font-main { font-family: system-ui, -apple-system, sans-serif; }
+      
+      .end-text { font-size: 28px; font-weight: 900; fill: #FFFFFF; letter-spacing: 4px; }
+      .sub-text { font-size: 14px; font-weight: 500; fill: #94A3B8; letter-spacing: 2px; text-transform: uppercase; }
+      .radar-text { font-size: 10px; font-family: monospace; fill: #00FFCC; opacity: 0.8; }
+      
+      /* Pure SVG Animations */
+      @keyframes radarSpin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+      @keyframes pulseGlow { 0%, 100% { transform: scale(1); opacity: 0.3; } 50% { transform: scale(1.5); opacity: 0.8; } }
+      @keyframes scanLine { 0% { transform: translateX(-600px); opacity: 0; } 50% { opacity: 1; } 100% { transform: translateX(600px); opacity: 0; } }
+      @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+      @keyframes floatY { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
+    </style>
+
+    <radialGradient id="glowBG" cx="50%" cy="100%" r="70%">
+      <stop offset="0%" stop-color="#0F172A" />
+      <stop offset="100%" stop-color="#020617" />
+    </radialGradient>
+    <radialGradient id="radarGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#00FFCC" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#00FFCC" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Tech Grid Pattern -->
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#FFFFFF" stroke-opacity="0.03" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <!-- Base Dark Canvas -->
+  <rect width="1200" height="350" fill="url(#glowBG)" rx="20"/>
+  <rect width="1200" height="350" fill="url(#grid)" rx="20"/>
+
+  <g class="font-main">
+    
+    <!-- ========================================== -->
+    <!-- CENTER: THE ANIMATED RADAR / HUD           -->
+    <!-- ========================================== -->
+    <g transform="translate(600, 160)">
+      
+      <!-- Ambient Glow -->
+      <circle cx="0" cy="0" r="150" fill="url(#radarGlow)" style="animation: pulseGlow 4s infinite ease-in-out;"/>
+      
+      <!-- Static Outer Rings -->
+      <circle cx="0" cy="0" r="100" fill="none" stroke="#334155" stroke-width="2"/>
+      <circle cx="0" cy="0" r="70" fill="none" stroke="#00FFCC" stroke-width="1" stroke-dasharray="4 8" opacity="0.5"/>
+      <circle cx="0" cy="0" r="40" fill="none" stroke="#334155" stroke-width="1"/>
+      
+      <!-- Spinning Radar Sweep -->
+      <g style="animation: radarSpin 6s linear infinite;">
+        <!-- The sweeping wedge -->
+        <path d="M 0 0 L 0 -100 A 100 100 0 0 1 70 -70 Z" fill="#00FFCC" opacity="0.1"/>
+        <line x1="0" y1="0" x2="0" y2="-100" stroke="#00FFCC" stroke-width="2"/>
+      </g>
+
+      <!-- Center Core Node -->
+      <circle cx="0" cy="0" r="6" fill="#FFFFFF" style="animation: pulseGlow 2s infinite;"/>
+      
+      <!-- Blinking Target Nodes on Radar -->
+      <circle cx="40" cy="-30" r="4" fill="#FF007A" style="animation: blink 3s infinite;"/>
+      <text x="50" y="-27" class="radar-text" style="animation: blink 3s infinite;">SYS.AI</text>
+      
+      <circle cx="-50" cy="40" r="3" fill="#EAB308" style="animation: blink 4s infinite 1s;"/>
+      <text x="-80" y="43" class="radar-text" style="animation: blink 4s infinite 1s;">UX.02</text>
+      
+    </g>
+
+    <!-- ========================================== -->
+    <!-- BOTTOM: CINEMATIC TEXT & SCANLINE          -->
+    <!-- ========================================== -->
+    
+    <!-- Animated Horizontal Scanline -->
+    <g transform="translate(600, 270)">
+      <rect x="-100" y="0" width="200" height="2" fill="#00FFCC" opacity="0.5" style="animation: scanLine 3s linear infinite;"/>
+    </g>
+
+    <!-- The Final Signature (Floating) -->
+    <g transform="translate(600, 290)" text-anchor="middle" style="animation: floatY 6s infinite ease-in-out;">
+      <text x="0" y="0" class="end-text">SYSTEM <tspan fill="#00FFCC">STANDBY</tspan></text>
+      <text x="0" y="25" class="sub-text">READY FOR NEXT PROMPT</text>
+      
+      <!-- Left & Right Tech Accents -->
+      <path d="M -180 20 L -230 20" fill="none" stroke="#334155" stroke-width="2"/>
+      <circle cx="-180" cy="20" r="3" fill="#00FFCC"/>
+      
+      <path d="M 180 20 L 230 20" fill="none" stroke="#334155" stroke-width="2"/>
+      <circle cx="180" cy="20" r="3" fill="#00FFCC"/>
+    </g>
+
+    <!-- Footer Meta Data -->
+    <g transform="translate(600, 335)" text-anchor="middle">
+      <text x="0" y="0" class="radar-text" fill="#475569">ARCHITECT: SAJITHA HESHAN // BUILD_VER: 2.0.4 // LOCATION: EARTH</text>
+    </g>
+
+  </g>
+</svg>
