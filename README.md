@@ -151,15 +151,13 @@
 
 
 
-<br><br>
 
 <div align="center">
-  <img src="./footer.svg?v=1" alt="System Standby" width="100%" />
+  <img src="./footer-horizon.svg?v=1" alt="Thanks for stopping by" width="100%" />
 </div>
 
 <br>
 
-<!-- Keep the views counter simple and minimal at the very bottom -->
 <div align="center">
-  <img src="https://komarev.com/ghpvc/?username=sajithaheshan&label=SYSTEM+PINGS&color=00FFCC&style=flat-square" alt="Profile Views" />
+  <img src="https://komarev.com/ghpvc/?username=sajithaheshan&label=Profile+Views&color=FF8A65&style=flat-square" alt="Profile Views" />
 </div>
