@@ -79,62 +79,71 @@
   <table width="100%" style="max-width: 950px; border-collapse: separate; border-spacing: 15px 0; border: none;">
     <tr>      
       <!-- ========================================== -->
-      <!-- PROJECT 1                                  -->
+      <!-- PROJECT 1 : DEVZAR                         -->
       <!-- ========================================== -->
       <td width="50%" valign="top" style="background-color: #0F172A; border: 1px solid #1E293B; border-radius: 16px; padding: 25px; box-shadow: 0 10px 15px -3px rgba(0,255,204,0.05);">        
-        <!-- Project Thumbnail Placeholder -->
-        <a href="https://github.com/sajithaheshan/YOUR-PROJECT-REPO" target="_blank">
-          <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=800&auto=format&fit=crop" width="100%" style="border-radius: 8px; border: 1px solid #334155;" alt="Project 1"/>
-        </a>
+        <!-- Project Thumbnail (Replace img src with your actual DevZar screenshot link) -->
+        <a href="https://devzar.com" target="_blank">
+          <img src="https://res.cloudinary.com/gmqushc0/image/upload/ar_16:8,c_auto,g_north/Screenshot_9-9-2026_62759_.jpg" width="100%" style="border-radius: 8px; border: 1px solid #334155;" alt="DevZar Project Preview"/>
+        </a>    
         <!-- Project Details -->
         <h3 style="margin: 15px 0 5px 0; font-family: -apple-system, sans-serif; font-size: 22px; font-weight: 800; color: #FFFFFF;">
-          Project Alpha: SaaS Interface
+          🟨 DevZar: API Directory
         </h3>
         <p style="margin: 0 0 15px 0; font-family: -apple-system, sans-serif; font-size: 14px; color: #94A3B8; line-height: 1.5;">
-          A modern, high-performance web application interface conceptualized in Figma and logic-generated via Claude 3.5. Focuses on seamless UX.
+          A beautifully designed neubrutalist directory of 145+ free public APIs. Features an interactive live testing environment and real-time GitHub creator tracking.
         </p>
         <!-- Tech Stack Used -->
         <p style="margin: 0 0 15px 0;">
-          <img src="https://img.shields.io/badge/Figma-111827?style=flat-square&logo=figma&logoColor=F24E1E" />
-          <img src="https://img.shields.io/badge/Claude-111827?style=flat-square&logo=anthropic&logoColor=D97757" />
-          <img src="https://img.shields.io/badge/React-111827?style=flat-square&logo=react&logoColor=61DAFB" />
-        </p>
+          <img src="https://img.shields.io/badge/Next.js-111827?style=flat-square&logo=next.js&logoColor=white" alt="Next.js" />
+          <img src="https://img.shields.io/badge/TypeScript-111827?style=flat-square&logo=typescript&logoColor=3178C6" alt="TypeScript" />
+          <img src="https://img.shields.io/badge/Postgres-111827?style=flat-square&logo=postgresql&logoColor=4169E1" alt="PostgreSQL" />
+          <img src="https://img.shields.io/badge/Tailwind-111827?style=flat-square&logo=tailwind-css&logoColor=38B2AC" alt="Tailwind CSS" />
+        </p>      
         <!-- Action Buttons -->
-        <a href="https://github.com/sajithaheshan/YOUR-PROJECT-REPO" target="_blank">
-          <img src="https://img.shields.io/badge/View_Source_Code-00FFCC?style=for-the-badge&logo=github&logoColor=black" />
+        <a href="https://devzar.com" target="_blank">
+          <img src="https://img.shields.io/badge/Visit_DevZar_Live-00FFCC?style=for-the-badge&logo=googlechrome&logoColor=black" alt="Visit Website" />
+        </a>
+        &nbsp;
+        <a href="https://github.com/sajithaheshan/devzar" target="_blank">
+          <img src="https://img.shields.io/badge/GitHub_Repo-1E293B?style=for-the-badge&logo=github&logoColor=white" alt="View Source Code" />
         </a>
       </td>
       <!-- ========================================== -->
-      <!-- PROJECT 2                                  -->
+      <!-- PROJECT 2 : TEROXY                         -->
       <!-- ========================================== -->
-      <td width="50%" valign="top" style="background-color: #0F172A; border: 1px solid #1E293B; border-radius: 16px; padding: 25px; box-shadow: 0 10px 15px -3px rgba(236,72,153,0.05);">       
-        <!-- Project Thumbnail Placeholder -->
-        <a href="https://github.com/sajithaheshan/YOUR-PROJECT-REPO" target="_blank">
-          <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=800&auto=format&fit=crop" width="100%" style="border-radius: 8px; border: 1px solid #334155;" alt="Project 2"/>
+      <td width="50%" valign="top" style="background-color: #0F172A; border: 1px solid #1E293B; border-radius: 16px; padding: 25px; box-shadow: 0 10px 15px -3px rgba(44,165,224,0.05);">       
+        <!-- Project Thumbnail (Replace img src with your actual Teroxy screenshot link) -->
+        <a href="https://teroxy.com" target="_blank">
+          <img src="https://res.cloudinary.com/gmqushc0/image/upload/ar_16:8,c_auto,g_north/screenshot-1788916794791.png" width="100%" style="border-radius: 8px; border: 1px solid #334155;" alt="Teroxy Project Preview"/>
         </a>
         <!-- Project Details -->
         <h3 style="margin: 15px 0 5px 0; font-family: -apple-system, sans-serif; font-size: 22px; font-weight: 800; color: #FFFFFF;">
-          Project Beta: AI Logic Engine
+          🚀 Teroxy: Live Proxies
         </h3>
         <p style="margin: 0 0 15px 0; font-family: -apple-system, sans-serif; font-size: 14px; color: #94A3B8; line-height: 1.5;">
-          An intelligent backend architecture designed to automate data processing. Built using Python and ChatGPT for complex algorithm generation.
-        </p>
+          A zero-database aggregator fetching always-active Telegram MTProto proxies directly from GitHub and channels. Features instant one-tap connection.
+        </p>        
         <!-- Tech Stack Used -->
         <p style="margin: 0 0 15px 0;">
-          <img src="https://img.shields.io/badge/Python-111827?style=flat-square&logo=python&logoColor=3776AB" />
-          <img src="https://img.shields.io/badge/ChatGPT-111827?style=flat-square&logo=openai&logoColor=10A37F" />
-          <img src="https://img.shields.io/badge/Vercel-111827?style=flat-square&logo=vercel&logoColor=white" />
-        </p>
+          <img src="https://img.shields.io/badge/Next.js-111827?style=flat-square&logo=next.js&logoColor=white" alt="Next.js" />
+          <img src="https://img.shields.io/badge/React-111827?style=flat-square&logo=react&logoColor=61DAFB" alt="React" />
+          <img src="https://img.shields.io/badge/Tailwind-111827?style=flat-square&logo=tailwind-css&logoColor=38B2AC" alt="Tailwind CSS" />
+          <img src="https://img.shields.io/badge/Telegram-111827?style=flat-square&logo=telegram&logoColor=2CA5E0" alt="Telegram API" />
+        </p>        
         <!-- Action Buttons -->
-        <a href="https://github.com/sajithaheshan/YOUR-PROJECT-REPO" target="_blank">
-          <img src="https://img.shields.io/badge/View_Source_Code-EC4899?style=for-the-badge&logo=github&logoColor=white" />
+        <a href="https://teroxy.com" target="_blank">
+          <img src="https://img.shields.io/badge/Visit_Teroxy_Live-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white" alt="Visit Website" />
+        </a>
+        &nbsp;
+        <a href="https://github.com/sajithaheshan/teroxy" target="_blank">
+          <img src="https://img.shields.io/badge/GitHub_Repo-1E293B?style=for-the-badge&logo=github&logoColor=white" alt="View Source Code" />
         </a>
       </td>
     </tr>
   </table>
 </div>
 <br><br>
-
 
 <br>
 
