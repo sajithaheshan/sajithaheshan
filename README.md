@@ -147,4 +147,14 @@
 <br><br>
 
 
+<br><br>
 
+<div align="center">
+  <img src="./footer-horizon.svg?v=1" alt="Thanks for stopping by" width="100%" />
+</div>
+
+<br>
+
+<div align="center">
+  <img src="https://komarev.com/ghpvc/?username=sajithaheshan&label=Profile+Views&color=FF8A65&style=flat-square" alt="Profile Views" />
+</div>
