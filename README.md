@@ -150,11 +150,11 @@
 <br><br>
 
 <div align="center">
-  <img src="./footer-horizon.svg?v=1" alt="Thanks for stopping by" width="100%" />
+  <img src="./footer.svg?v=20" alt="Footer Graphic" width="100%" />
 </div>
 
 <br>
 
 <div align="center">
-  <img src="https://komarev.com/ghpvc/?username=sajithaheshan&label=Profile+Views&color=FF8A65&style=flat-square" alt="Profile Views" />
+  <img src="https://komarev.com/ghpvc/?username=sajithaheshan&label=Visions+Rendered&color=EAB308&style=flat-square" alt="Views" />
 </div>
