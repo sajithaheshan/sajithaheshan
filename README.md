@@ -10,7 +10,7 @@
       <!-- YouTube Card -->
       <td width="33%" valign="top" align="center"
         style="background-color: #F9FAFB; border: 1px solid #E5E7EB; border-radius: 12px; padding: 18px;">
-        <a href="https://youtube.com/@YOUR_CHANNEL" target="_blank" style="text-decoration: none;">
+        <a href="https://youtube.com/@techwisdomlk" target="_blank" style="text-decoration: none;">
           <img src="https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white"
             style="margin-bottom: 10px;" />
           <h3 style="margin: 0 0 6px 0; font-family: -apple-system, sans-serif; color: #111827; font-size: 15px;">
@@ -24,7 +24,7 @@
       <!-- LinkedIn Card -->
       <td width="33%" valign="top" align="center"
         style="background-color: #F9FAFB; border: 1px solid #E5E7EB; border-radius: 12px; padding: 18px;">
-        <a href="https://linkedin.com/in/YOUR_LINK" target="_blank" style="text-decoration: none;">
+        <a href="https://linkedin.com/in/sajithaheshan" target="_blank" style="text-decoration: none;">
           <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white"
             style="margin-bottom: 10px;" />
           <h3 style="margin: 0 0 6px 0; font-family: -apple-system, sans-serif; color: #111827; font-size: 15px;">
@@ -38,7 +38,7 @@
       <!-- X / Twitter Card -->
       <td width="33%" valign="top" align="center"
         style="background-color: #F9FAFB; border: 1px solid #E5E7EB; border-radius: 12px; padding: 18px;">
-        <a href="https://twitter.com/YOUR_LINK" target="_blank" style="text-decoration: none;">
+        <a href="https://twitter.com/sajithaheshan" target="_blank" style="text-decoration: none;">
           <img src="https://img.shields.io/badge/Twitter_/_X-000000?style=for-the-badge&logo=x&logoColor=white"
             style="margin-bottom: 10px;" />
           <h3 style="margin: 0 0 6px 0; font-family: -apple-system, sans-serif; color: #111827; font-size: 15px;">
