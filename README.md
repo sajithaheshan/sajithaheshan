@@ -83,7 +83,7 @@
       <!-- ========================================== -->
       <td width="50%" valign="top" style="background-color: #0F172A; border: 1px solid #1E293B; border-radius: 16px; padding: 25px; box-shadow: 0 10px 15px -3px rgba(0,255,204,0.05);">        
         <!-- Project Thumbnail (Replace img src with your actual DevZar screenshot link) -->
-        <a href="https://devzar.com" target="_blank">
+        <a href="https://devzar.netlify.app" target="_blank">
           <img src="https://res.cloudinary.com/gmqushc0/image/upload/ar_16:8,c_auto,g_north/Screenshot_9-9-2026_62759_.jpg" width="100%" style="border-radius: 8px; border: 1px solid #334155;" alt="DevZar Project Preview"/>
         </a>    
         <!-- Project Details -->
@@ -101,7 +101,7 @@
           <img src="https://img.shields.io/badge/Tailwind-111827?style=flat-square&logo=tailwind-css&logoColor=38B2AC" alt="Tailwind CSS" />
         </p>      
         <!-- Action Buttons -->
-        <a href="https://devzar.com" target="_blank">
+        <a href="https://devzar.netlify.app" target="_blank">
           <img src="https://img.shields.io/badge/Visit_DevZar_Live-00FFCC?style=for-the-badge&logo=googlechrome&logoColor=black" alt="Visit Website" />
         </a>
         &nbsp;
@@ -114,7 +114,7 @@
       <!-- ========================================== -->
       <td width="50%" valign="top" style="background-color: #0F172A; border: 1px solid #1E293B; border-radius: 16px; padding: 25px; box-shadow: 0 10px 15px -3px rgba(44,165,224,0.05);">       
         <!-- Project Thumbnail (Replace img src with your actual Teroxy screenshot link) -->
-        <a href="https://teroxy.com" target="_blank">
+        <a href="https://teroxy.netlify.app" target="_blank">
           <img src="https://res.cloudinary.com/gmqushc0/image/upload/ar_16:8,c_auto,g_north/screenshot-1788916794791.png" width="100%" style="border-radius: 8px; border: 1px solid #334155;" alt="Teroxy Project Preview"/>
         </a>
         <!-- Project Details -->
@@ -132,7 +132,7 @@
           <img src="https://img.shields.io/badge/Telegram-111827?style=flat-square&logo=telegram&logoColor=2CA5E0" alt="Telegram API" />
         </p>        
         <!-- Action Buttons -->
-        <a href="https://teroxy.com" target="_blank">
+        <a href="https://teroxy.netlify.app" target="_blank">
           <img src="https://img.shields.io/badge/Visit_Teroxy_Live-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white" alt="Visit Website" />
         </a>
         &nbsp;
