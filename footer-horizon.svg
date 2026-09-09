@@ -1,100 +1,100 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" width="100%" height="100%" preserveAspectRatio="xMidYMid slice">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 350" width="100%" height="100%">
   <defs>
     <style>
-      .font-main { font-family: -apple-system, system-ui, sans-serif; }
+      .font-main { font-family: system-ui, -apple-system, sans-serif; }
       
-      .title { font-size: 44px; font-weight: 800; fill: #FFFFFF; letter-spacing: -2px; }
-      .subtitle { font-size: 17px; font-weight: 400; fill: #C7CBD1; }
+      .massive-text { font-size: 75px; font-weight: 900; fill: #FFFFFF; letter-spacing: -2px; }
+      .sub-text { font-size: 20px; font-weight: 500; fill: #94A3B8; }
+      .marquee-text { font-size: 16px; font-weight: 800; fill: #000000; letter-spacing: 3px; text-transform: uppercase; }
       
-      @keyframes pulseGlow {
-        0%, 100% { opacity: 0.4; transform: scale(1); }
-        50% { opacity: 0.8; transform: scale(1.05); }
-      }
-      @keyframes floatSun {
-        0%, 100% { transform: translateY(0); }
-        50% { transform: translateY(-12px); }
-      }
+      /* Graphic Animations */
+      @keyframes float1 { 0%, 100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-20px) rotate(5deg); } }
+      @keyframes float2 { 0%, 100% { transform: translateY(0) scale(1); } 50% { transform: translateY(15px) scale(1.05); } }
+      
+      /* Scrolling Marquee Animation */
+      @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
     </style>
 
-    <!-- Soft Dark Background -->
-    <linearGradient id="bg" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#0A0A0F"/>
-      <stop offset="100%" stop-color="#1A1523"/>
-    </linearGradient>
-
-    <!-- Glowing Sun / Horizon Gradient (Warm Peach) -->
-    <radialGradient id="sunGlow" cx="50%" cy="100%" r="60%">
-      <stop offset="0%" stop-color="#FF8A65" stop-opacity="0.4"/>
-      <stop offset="60%" stop-color="#FFB74D" stop-opacity="0.1"/>
-      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    <!-- Aesthetic Mesh Gradients -->
+    <radialGradient id="mesh1" cx="80%" cy="20%" r="50%">
+      <stop offset="0%" stop-color="#FF007A" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#FF007A" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="mesh2" cx="90%" cy="80%" r="40%">
+      <stop offset="0%" stop-color="#EAB308" stop-opacity="0.3"/> <!-- Warm Yellow Glow -->
+      <stop offset="100%" stop-color="#EAB308" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="mesh3" cx="10%" cy="10%" r="50%">
+      <stop offset="0%" stop-color="#00FFCC" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#00FFCC" stop-opacity="0"/>
     </radialGradient>
 
-    <!-- Horizon Line Gradient -->
-    <linearGradient id="lineGrad" x1="0%" y1="50%" x2="100%" y2="50%">
-      <stop offset="0%" stop-color="#FF8A65" stop-opacity="0"/>
-      <stop offset="50%" stop-color="#FF8A65" stop-opacity="0.8"/>
-      <stop offset="100%" stop-color="#FF8A65" stop-opacity="0"/>
-    </linearGradient>
+    <!-- Glassmorphism Filter -->
+    <filter id="glass" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" />
+    </filter>
   </defs>
 
-  <!-- Base Canvas -->
-  <rect width="1200" height="300" fill="url(#bg)" rx="20"/>
+  <!-- Base Dark Canvas -->
+  <rect width="1200" height="350" fill="#09090B" rx="24"/>
   
-  <!-- Warm Glow at the Bottom -->
-  <rect width="1200" height="300" fill="url(#sunGlow)" rx="20"/>
+  <!-- Glowing Mesh Backgrounds -->
+  <rect width="1200" height="350" fill="url(#mesh1)" rx="24"/>
+  <rect width="1200" height="350" fill="url(#mesh2)" rx="24"/>
+  <rect width="1200" height="350" fill="url(#mesh3)" rx="24"/>
 
-  <!-- Animated Sun (Floating softly) -->
-  <g transform="translate(600, 240)" style="animation: floatSun 6s infinite ease-in-out;">
-    <circle cx="0" cy="0" r="80" fill="#FFB74D" opacity="0.15" style="animation: pulseGlow 4s infinite ease-in-out;"/>
-    <circle cx="0" cy="0" r="55" fill="#FF8A65" opacity="0.25" style="animation: pulseGlow 4s infinite ease-in-out alternate;"/>
-    <circle cx="0" cy="0" r="35" fill="#FFD54F" opacity="0.6"/>
-  </g>
-
-  <!-- Horizon Line (Subtle) -->
-  <path d="M 100 255 L 1100 255" fill="none" stroke="url(#lineGrad)" stroke-width="2"/>
-
-  <!-- ========================================== -->
-  <!-- CENTER: THANK YOU MESSAGE                  -->
-  <!-- ========================================== -->
-  <g class="font-main" transform="translate(600, 120)" text-anchor="middle">
+  <g class="font-main">
     
-    <!-- Big Title -->
-    <text x="0" y="0" class="title">Thanks for stopping by.</text>
-    
-    <!-- Subtitle -->
-    <text x="0" y="42" class="subtitle">Let's create something beautiful together.</text>
-
-    <!-- Small Divider (Minimal) -->
-    <path d="M -80 80 L 80 80" fill="none" stroke="#FF8A65" stroke-width="1.5" stroke-linecap="round"/>
-    <circle cx="0" cy="80" r="4" fill="#FF8A65"/>
-  </g>
-
-  <!-- ========================================== -->
-  <!-- BTTOM: SOCIAL ICONS (Minimal Circles)      -->
-  <!-- ========================================== -->
-  <g transform="translate(600, 270)" text-anchor="middle">
-    
-    <!-- YouTube Icon (Circle) -->
-    <g transform="translate(-70, 0)">
-      <circle cx="0" cy="0" r="18" fill="#1E1E2E" stroke="#FF8A65" stroke-width="1" opacity="0.9"/>
-      <path d="M-7 -4 L7 0 L-7 4 Z" fill="#FFD54F"/>
+    <!-- ========================================== -->
+    <!-- LEFT: MASSIVE TYPOGRAPHY                   -->
+    <!-- ========================================== -->
+    <g transform="translate(60, 100)">
+      <text x="0" y="0" class="sub-text">READY TO CREATE?</text>
+      
+      <text x="0" y="70" class="massive-text">LET'S BUILD THE</text>
+      <!-- Outlined Aesthetic Text -->
+      <text x="0" y="145" class="massive-text" fill="none" stroke="#FFFFFF" stroke-width="2">FUTURE.</text>
     </g>
 
-    <!-- LinkedIn Icon (Circle) -->
-    <g transform="translate(0, 0)">
-      <circle cx="0" cy="0" r="18" fill="#1E1E2E" stroke="#FF8A65" stroke-width="1" opacity="0.9"/>
-      <rect x="-4" y="-8" width="3" height="10" fill="#FFD54F"/>
-      <circle cx="-4" cy="-10" r="2" fill="#FFD54F"/>
-      <rect x="2" y="-5" width="3" height="7" fill="#FFD54F"/>
-      <circle cx="3.5" cy="-7" r="2" fill="#FFD54F"/>
+    <!-- ========================================== -->
+    <!-- RIGHT: ABSTRACT 3D GLASS GRAPHICS          -->
+    <!-- ========================================== -->
+    <g transform="translate(850, 150)">
+      <!-- Floating Glass Ring 1 -->
+      <g style="animation: float1 7s infinite ease-in-out;">
+        <circle cx="0" cy="-30" r="70" fill="none" stroke="#FF007A" stroke-width="15" opacity="0.8"/>
+        <circle cx="0" cy="-30" r="70" fill="none" stroke="#FFFFFF" stroke-width="2" opacity="0.5"/>
+      </g>
+      
+      <!-- Floating Glass Sphere / Orb -->
+      <g style="animation: float2 5s infinite ease-in-out;" transform="translate(120, 30)">
+        <circle cx="0" cy="0" r="50" fill="#EAB308" opacity="0.9"/>
+        <circle cx="-15" cy="-15" r="20" fill="#FFFFFF" opacity="0.4" filter="url(#glass)"/> <!-- Highlight reflection -->
+      </g>
+
+      <!-- Floating Abstract Box -->
+      <g style="animation: float1 6s infinite ease-in-out reverse;" transform="translate(40, 80)">
+        <rect x="-40" y="-40" width="80" height="80" rx="15" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.2)" stroke-width="2" style="backdrop-filter: blur(10px);"/>
+        <circle cx="0" cy="0" r="8" fill="#00FFCC"/>
+      </g>
     </g>
 
-    <!-- X/Twitter Icon (Circle) -->
-    <g transform="translate(70, 0)">
-      <circle cx="0" cy="0" r="18" fill="#1E1E2E" stroke="#FF8A65" stroke-width="1" opacity="0.9"/>
-      <path d="M-6 -6 L6 6 M6 -6 L-6 6" stroke="#FFD54F" stroke-width="2" stroke-linecap="round"/>
+    <!-- ========================================== -->
+    <!-- BOTTOM: SCROLLING MARQUEE (TICKER TAPE)    -->
+    <!-- ========================================== -->
+    <g transform="translate(0, 290)">
+      <!-- Warm Yellow Base Bar -->
+      <path d="M 0 0 L 1200 0 L 1200 60 L 0 60 Z" fill="#EAB308"/>
+      
+      <!-- Scrolling Text Container -->
+      <g style="animation: marquee 15s linear infinite;">
+        <!-- We duplicate the text multiple times so it loops seamlessly -->
+        <text x="0" y="38" class="marquee-text">
+          UI/UX DESIGN • AI ARCHITECTURE • FRONTEND LOGIC • SYSTEM ENGINEERING • UI/UX DESIGN • AI ARCHITECTURE • FRONTEND LOGIC • SYSTEM ENGINEERING • UI/UX DESIGN • AI ARCHITECTURE • FRONTEND LOGIC • SYSTEM ENGINEERING • 
+        </text>
+      </g>
     </g>
 
   </g>
-
 </svg>
