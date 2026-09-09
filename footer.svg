@@ -1,98 +1,100 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 350" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" width="100%" height="100%" preserveAspectRatio="xMidYMid slice">
   <defs>
     <style>
       .font-main { font-family: system-ui, -apple-system, sans-serif; }
       
-      .end-text { font-size: 28px; font-weight: 900; fill: #FFFFFF; letter-spacing: 4px; }
-      .sub-text { font-size: 14px; font-weight: 500; fill: #94A3B8; letter-spacing: 2px; text-transform: uppercase; }
-      .radar-text { font-size: 10px; font-family: monospace; fill: #00FFCC; opacity: 0.8; }
-       
-      /* Pure SVG Animations */
-      @keyframes radarSpin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-      @keyframes pulseGlow { 0%, 100% { transform: scale(1); opacity: 0.3; } 50% { transform: scale(1.5); opacity: 0.8; } }
-      @keyframes scanLine { 0% { transform: translateX(-600px); opacity: 0; } 50% { opacity: 1; } 100% { transform: translateX(600px); opacity: 0; } }
-      @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
-      @keyframes floatY { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
+      .title { font-size: 36px; font-weight: 800; fill: #FFFFFF; letter-spacing: -1px; }
+      .subtitle { font-size: 15px; font-weight: 400; fill: #94A3B8; }
+      .copyright { font-size: 12px; font-weight: 400; fill: #475569; }
+      .label { font-size: 11px; font-weight: 700; fill: #00FFCC; letter-spacing: 3px; text-transform: uppercase; }
+      
+      @keyframes slowSpin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+      @keyframes slowSpinReverse { 0% { transform: rotate(360deg); } 100% { transform: rotate(0deg); } }
+      @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+      @keyframes pulse { 0%, 100% { opacity: 0.3; } 50% { opacity: 0.7; } }
     </style>
 
-    <radialGradient id="glowBG" cx="50%" cy="100%" r="70%">
-      <stop offset="0%" stop-color="#0F172A" />
-      <stop offset="100%" stop-color="#020617" />
-    </radialGradient>
-    <radialGradient id="radarGlow" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#00FFCC" stop-opacity="0.3"/>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#020617"/>
+    </linearGradient>
+
+    <radialGradient id="centerGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#00FFCC" stop-opacity="0.06"/>
       <stop offset="100%" stop-color="#00FFCC" stop-opacity="0"/>
     </radialGradient>
-
-    <!-- Tech Grid Pattern -->
-    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#FFFFFF" stroke-opacity="0.03" stroke-width="1"/>
-    </pattern>
   </defs>
 
-  <!-- Base Dark Canvas -->
-  <rect width="1200" height="350" fill="url(#glowBG)" rx="20"/>
-  <rect width="1200" height="350" fill="url(#grid)" rx="20"/>
+  <!-- Background -->
+  <rect width="1200" height="300" fill="url(#bgGrad)" rx="20"/>
+  <rect width="1200" height="300" fill="url(#centerGlow)" rx="20"/>
 
   <g class="font-main">
-    
-    <!-- ========================================== -->
-    <!-- CENTER: THE ANIMATED RADAR / HUD           -->
-    <!-- ========================================== -->
-    <g transform="translate(600, 160)">
-      
-      <!-- Ambient Glow -->
-      <circle cx="0" cy="0" r="150" fill="url(#radarGlow)" style="animation: pulseGlow 4s infinite ease-in-out;"/>
-      
-      <!-- Static Outer Rings -->
-      <circle cx="0" cy="0" r="100" fill="none" stroke="#334155" stroke-width="2"/>
-      <circle cx="0" cy="0" r="70" fill="none" stroke="#00FFCC" stroke-width="1" stroke-dasharray="4 8" opacity="0.5"/>
-      <circle cx="0" cy="0" r="40" fill="none" stroke="#334155" stroke-width="1"/>
-      
-      <!-- Spinning Radar Sweep -->
-      <g style="animation: radarSpin 6s linear infinite;">
-        <!-- The sweeping wedge -->
-        <path d="M 0 0 L 0 -100 A 100 100 0 0 1 70 -70 Z" fill="#00FFCC" opacity="0.1"/>
-        <line x1="0" y1="0" x2="0" y2="-100" stroke="#00FFCC" stroke-width="2"/>
-      </g>
 
-      <!-- Center Core Node -->
-      <circle cx="0" cy="0" r="6" fill="#FFFFFF" style="animation: pulseGlow 2s infinite;"/>
+    <!-- ========================================== -->
+    <!-- LEFT SIDE: Concentric Rings (Decorative)   -->
+    <!-- ========================================== -->
+    <g transform="translate(180, 150)">
+      <!-- Outer ring - slow spin -->
+      <circle cx="0" cy="0" r="110" fill="none" stroke="#1E293B" stroke-width="1" stroke-dasharray="4 12" style="animation: slowSpin 40s linear infinite; transform-origin: 0px 0px;"/>
       
-      <!-- Blinking Target Nodes on Radar -->
-      <circle cx="40" cy="-30" r="4" fill="#FF007A" style="animation: blink 3s infinite;"/>
-      <text x="50" y="-27" class="radar-text" style="animation: blink 3s infinite;">SYS.AI</text>
+      <!-- Middle ring - reverse spin -->
+      <circle cx="0" cy="0" r="80" fill="none" stroke="#334155" stroke-width="1" stroke-dasharray="8 16" style="animation: slowSpinReverse 30s linear infinite; transform-origin: 0px 0px;"/>
       
-      <circle cx="-50" cy="40" r="3" fill="#EAB308" style="animation: blink 4s infinite 1s;"/>
-      <text x="-80" y="43" class="radar-text" style="animation: blink 4s infinite 1s;">UX.02</text>
+      <!-- Inner ring - subtle pulse -->
+      <circle cx="0" cy="0" r="50" fill="none" stroke="#00FFCC" stroke-width="1" opacity="0.2" style="animation: pulse 4s infinite;"/>
       
+      <!-- Center dot -->
+      <circle cx="0" cy="0" r="4" fill="#00FFCC" opacity="0.6"/>
+      
+      <!-- Small accent dots on rings -->
+      <circle cx="0" cy="-110" r="3" fill="#00FFCC" opacity="0.5" style="animation: slowSpin 40s linear infinite; transform-origin: 0px 0px;"/>
+      <circle cx="80" cy="0" r="2.5" fill="#3B82F6" opacity="0.4" style="animation: slowSpinReverse 30s linear infinite; transform-origin: 0px 0px;"/>
+      <circle cx="-50" cy="0" r="2" fill="#EC4899" opacity="0.3" style="animation: slowSpin 25s linear infinite; transform-origin: 0px 0px;"/>
     </g>
 
     <!-- ========================================== -->
-    <!-- BOTTOM: CINEMATIC TEXT & SCANLINE          -->
+    <!-- RIGHT SIDE: Geometric Shapes (Decorative)  -->
     <!-- ========================================== -->
-    
-    <!-- Animated Horizontal Scanline -->
-    <g transform="translate(600, 270)">
-      <rect x="-100" y="0" width="200" height="2" fill="#00FFCC" opacity="0.5" style="animation: scanLine 3s linear infinite;"/>
+    <g transform="translate(1020, 150)">
+      <!-- Triangle outline -->
+      <polygon points="0,-70 60,35 -60,35" fill="none" stroke="#1E293B" stroke-width="1.5" style="animation: float 6s infinite ease-in-out;"/>
+      
+      <!-- Inner triangle -->
+      <polygon points="0,-40 35,20 -35,20" fill="none" stroke="#334155" stroke-width="1" style="animation: float 5s infinite ease-in-out reverse;"/>
+      
+      <!-- Small circle accent -->
+      <circle cx="0" cy="-70" r="3" fill="#00FFCC" opacity="0.5" style="animation: pulse 3s infinite;"/>
+      <circle cx="60" cy="35" r="2.5" fill="#3B82F6" opacity="0.4"/>
+      <circle cx="-60" cy="35" r="2.5" fill="#EC4899" opacity="0.3"/>
+      
+      <!-- Horizontal line accents -->
+      <line x1="-90" y1="80" x2="-30" y2="80" stroke="#334155" stroke-width="1"/>
+      <line x1="30" y1="80" x2="90" y2="80" stroke="#334155" stroke-width="1"/>
+      <circle cx="-30" cy="80" r="2" fill="#00FFCC" opacity="0.4"/>
+      <circle cx="30" cy="80" r="2" fill="#00FFCC" opacity="0.4"/>
     </g>
 
-    <!-- The Final Signature (Floating) -->
-    <g transform="translate(600, 290)" text-anchor="middle" style="animation: floatY 6s infinite ease-in-out;">
-      <text x="0" y="0" class="end-text">SYSTEM <tspan fill="#00FFCC">STANDBY</tspan></text>
-      <text x="0" y="25" class="sub-text">READY FOR NEXT PROMPT</text>
+    <!-- ========================================== -->
+    <!-- CENTER: Typography & Content               -->
+    <!-- ========================================== -->
+    <g transform="translate(600, 90)" text-anchor="middle">
       
-      <!-- Left & Right Tech Accents -->
-      <path d="M -180 20 L -230 20" fill="none" stroke="#334155" stroke-width="2"/>
-      <circle cx="-180" cy="20" r="3" fill="#00FFCC"/>
+      <!-- Small label on top -->
+      <text x="0" y="0" class="label">Connect</text>
       
-      <path d="M 180 20 L 230 20" fill="none" stroke="#334155" stroke-width="2"/>
-      <circle cx="180" cy="20" r="3" fill="#00FFCC"/>
-    </g>
-
-    <!-- Footer Meta Data -->
-    <g transform="translate(600, 335)" text-anchor="middle">
-      <text x="0" y="0" class="radar-text" fill="#475569">ARCHITECT: SAJITHA HESHAN // BUILD_VER: 2.0.4 // LOCATION: EARTH</text>
+      <!-- Main heading -->
+      <text x="0" y="45" class="title">Let's build together.</text>
+      
+      <!-- Subtitle -->
+      <text x="0" y="75" class="subtitle">Open for collaborations, freelance projects, and tech conversations.</text>
+      
+      <!-- Minimal divider -->
+      <line x1="-60" y1="100" x2="60" y2="100" stroke="#334155" stroke-width="1"/>
+      <line x1="-15" y1="100" x2="15" y2="100" stroke="#00FFCC" stroke-width="2.5" stroke-linecap="round"/>
+      
+      <!-- Copyright -->
+      <text x="0" y="130" class="copyright">© 2025 Sajitha Heshan — Designed &amp; Built with AI</text>
     </g>
 
   </g>
